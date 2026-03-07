@@ -23,6 +23,7 @@
 		5F8210F4A50828305B9A9829 /* ShowDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B68A05672798738E06A9445 /* ShowDetailViewModel.swift */; };
 		69DA93E20EEAD517C73C2C55 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716B82EB0DE40AF5CA0046B /* AudioPlayerService.swift */; };
 		80333F9DA0853DF71DE72B25 /* CircularProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597EE12B6A60EFED8DF20AE /* CircularProgressSlider.swift */; };
+		9E4BB866156EFE9FEA900CFF /* ShowRankingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE8B1DCC010630D908D30D4 /* ShowRankingService.swift */; };
 		B46EF04B7F5EE5717FC9E045 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ABEED9FC88A255F25503A5 /* Show.swift */; };
 		BFBF90850854CB4DDD9F65CE /* ArchiveAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116B1CAB6EDED6955C388264 /* ArchiveAPI.swift */; };
 		C325FF93AC03E2D9F83FF16F /* DeadTapesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAB8E5F74B94A4FDACB6009 /* DeadTapesApp.swift */; };
@@ -57,6 +58,7 @@
 		E9ABEED9FC88A255F25503A5 /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		ECAB8E5F74B94A4FDACB6009 /* DeadTapesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadTapesApp.swift; sourceTree = "<group>"; };
 		F534C024C7D41642407CD363 /* FavoriteShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShow.swift; sourceTree = "<group>"; };
+		FBE8B1DCC010630D908D30D4 /* ShowRankingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRankingService.swift; sourceTree = "<group>"; };
 		FDE53030432A6607D7403390 /* ShowDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 			children = (
 				116B1CAB6EDED6955C388264 /* ArchiveAPI.swift */,
 				8716B82EB0DE40AF5CA0046B /* AudioPlayerService.swift */,
+				FBE8B1DCC010630D908D30D4 /* ShowRankingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				E49A9BB078629C9BC9C0F772 /* ShowCard.swift in Sources */,
 				0784FBF8B51BE342D121F7AF /* ShowDetailView.swift in Sources */,
 				5F8210F4A50828305B9A9829 /* ShowDetailViewModel.swift in Sources */,
+				9E4BB866156EFE9FEA900CFF /* ShowRankingService.swift in Sources */,
 				1D7ECE011039B4F7E760C158 /* Theme.swift in Sources */,
 				D2BE089E8277C27A2738640D /* Track.swift in Sources */,
 				0BBB41E19DD845785494676B /* YearPickerView.swift in Sources */,

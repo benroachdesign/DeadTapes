@@ -35,14 +35,83 @@ struct SourceBadge: View {
     }
 }
 
+// MARK: - Popularity Badge
+
+enum ShowBadge: Equatable {
+    case topAllTime(rank: Int)   // Top 100 All Time
+    case topOfYear(rank: Int, year: Int) // Top 10 of YYYY
+
+    var label: String {
+        switch self {
+        case .topAllTime(let rank):
+            return "Top \(rank) All Time"
+        case .topOfYear(let rank, let year):
+            return "#\(rank) of \(year)"
+        }
+    }
+
+    var icon: String {
+        switch self {
+        case .topAllTime: return "crown.fill"
+        case .topOfYear: return "trophy.fill"
+        }
+    }
+
+    var color: Color {
+        switch self {
+        case .topAllTime(let rank):
+            if rank <= 10 { return Color(hex: "FFD700") }     // Gold
+            if rank <= 25 { return Color(hex: "C0C0C0") }     // Silver
+            return Color(hex: "CD7F32")                         // Bronze
+        case .topOfYear(let rank, _):
+            if rank <= 3 { return Color(hex: "FFD700") }
+            return DeadTheme.Colors.accent
+        }
+    }
+}
+
+struct PopularityBadge: View {
+    let badge: ShowBadge
+
+    var body: some View {
+        HStack(spacing: 3) {
+            Image(systemName: badge.icon)
+                .font(.system(size: 8, weight: .bold))
+            Text(badge.label)
+                .font(.system(size: 9, weight: .bold, design: .rounded))
+        }
+        .foregroundStyle(badge.color)
+        .padding(.horizontal, 7)
+        .padding(.vertical, 3)
+        .background(
+            Capsule()
+                .fill(badge.color.opacity(0.12))
+                .overlay(
+                    Capsule()
+                        .strokeBorder(badge.color.opacity(0.25), lineWidth: 1)
+                )
+        )
+    }
+}
+
 // MARK: - Show Card
 
 struct ShowCard: View {
     let show: Show
     var isCompact: Bool = false
+    var badges: [ShowBadge] = []
 
     var body: some View {
         VStack(alignment: .leading, spacing: DeadTheme.Spacing.sm) {
+            // Badges row (if any)
+            if !badges.isEmpty {
+                HStack(spacing: DeadTheme.Spacing.xs) {
+                    ForEach(Array(badges.enumerated()), id: \.offset) { _, badge in
+                        PopularityBadge(badge: badge)
+                    }
+                }
+            }
+
             // Date & Source
             HStack {
                 Text(show.formattedDate)
@@ -61,6 +130,11 @@ struct ShowCard: View {
                         Text(String(format: "%.1f", rating))
                             .font(DeadTheme.Typography.monoSmall())
                             .foregroundStyle(DeadTheme.Colors.textSecondary)
+                        if let reviews = show.numReviews, reviews > 0 {
+                            Text("(\(reviews))")
+                                .font(DeadTheme.Typography.monoSmall())
+                                .foregroundStyle(DeadTheme.Colors.textTertiary)
+                        }
                     }
                 }
             }
@@ -98,8 +172,12 @@ struct ShowCard: View {
                     RoundedRectangle(cornerRadius: DeadTheme.Radius.md)
                         .strokeBorder(
                             LinearGradient(
-                                colors: [
+                                colors: badges.isEmpty ? [
                                     DeadTheme.Colors.textTertiary.opacity(0.15),
+                                    Color.clear
+                                ] : [
+                                    badges.first!.color.opacity(0.25),
+                                    badges.first!.color.opacity(0.05),
                                     Color.clear
                                 ],
                                 startPoint: .topLeading,

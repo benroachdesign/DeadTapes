@@ -26,7 +26,13 @@ actor ArchiveAPI {
         ]
         let fieldParams = fields.map { "fl[]=\($0)" }.joined(separator: "&")
 
-        let query = "collection:GratefulDead AND date:\(year)*"
+        let query: String
+        if year == 0 {
+            // All-time query — no year filter
+            query = "collection:GratefulDead"
+        } else {
+            query = "collection:GratefulDead AND date:\(year)*"
+        }
         let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
 
         let urlString = "\(baseSearchURL)?q=\(encodedQuery)&\(fieldParams)&output=json&rows=\(rows)&page=\(page)&sort[]=downloads+desc"

@@ -96,7 +96,7 @@ struct ShowBrowserView: View {
                             LazyVStack(spacing: DeadTheme.Spacing.sm) {
                                 ForEach(Array(viewModel.filteredShows.enumerated()), id: \.element.id) { index, show in
                                     NavigationLink(destination: ShowDetailView(show: show)) {
-                                        ShowCard(show: show)
+                                        ShowCard(show: show, badges: viewModel.badges(for: show))
                                     }
                                     .buttonStyle(.plain)
                                     .opacity(showsVisible ? 1 : 0)

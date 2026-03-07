@@ -14,6 +14,8 @@ final class ShowBrowserViewModel {
 
     let years = Array(1965...1995)
 
+    private let rankingService = ShowRankingService.shared
+
     var showCount: Int { filteredShows.count }
 
     func loadShows() async {
@@ -43,6 +45,23 @@ final class ShowBrowserViewModel {
         Task {
             await loadShows()
         }
+    }
+
+    /// Get badges for a show based on its ranking
+    func badges(for show: Show) -> [ShowBadge] {
+        var result: [ShowBadge] = []
+
+        // Check Top All Time
+        if let allTimeRank = rankingService.allTimeRank(for: show.identifier) {
+            result.append(.topAllTime(rank: allTimeRank))
+        }
+
+        // Check Top 10 of Year (based on position in the full unfiltered list)
+        if let yearRank = rankingService.yearRank(for: show, in: shows), yearRank <= 10 {
+            result.append(.topOfYear(rank: yearRank, year: selectedYear))
+        }
+
+        return result
     }
 
     private func filterShows() {

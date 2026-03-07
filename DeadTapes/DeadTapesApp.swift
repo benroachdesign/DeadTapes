@@ -12,6 +12,10 @@ struct DeadTapesApp: App {
                 .environment(audioPlayer)
                 .environment(playerViewModel)
                 .preferredColorScheme(.dark)
+                .task {
+                    // Load top all-time rankings in the background
+                    await ShowRankingService.shared.loadTopAllTime()
+                }
         }
         .modelContainer(for: [FavoriteShow.self])
     }
