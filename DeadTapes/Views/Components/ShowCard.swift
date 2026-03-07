@@ -74,23 +74,13 @@ struct PopularityBadge: View {
     let badge: ShowBadge
 
     var body: some View {
-        HStack(spacing: 3) {
+        HStack(spacing: 2) {
             Image(systemName: badge.icon)
-                .font(.system(size: 8, weight: .bold))
+                .font(.system(size: 7, weight: .semibold))
             Text(badge.label)
-                .font(.system(size: 9, weight: .bold, design: .rounded))
+                .font(.system(size: 9, weight: .semibold, design: .monospaced))
         }
-        .foregroundStyle(badge.color)
-        .padding(.horizontal, 7)
-        .padding(.vertical, 3)
-        .background(
-            Capsule()
-                .fill(badge.color.opacity(0.12))
-                .overlay(
-                    Capsule()
-                        .strokeBorder(badge.color.opacity(0.25), lineWidth: 1)
-                )
-        )
+        .foregroundStyle(badge.color.opacity(0.8))
     }
 }
 
@@ -101,17 +91,16 @@ struct ShowCard: View {
     var isCompact: Bool = false
     var badges: [ShowBadge] = []
 
+    /// Pick the single most important badge to show
+    private var primaryBadge: ShowBadge? {
+        badges.first(where: {
+            if case .topAllTime = $0 { return true }
+            return false
+        }) ?? badges.first
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: DeadTheme.Spacing.sm) {
-            // Badges row (if any)
-            if !badges.isEmpty {
-                HStack(spacing: DeadTheme.Spacing.xs) {
-                    ForEach(Array(badges.enumerated()), id: \.offset) { _, badge in
-                        PopularityBadge(badge: badge)
-                    }
-                }
-            }
-
             // Date & Source
             HStack {
                 Text(show.formattedDate)
@@ -145,12 +134,16 @@ struct ShowCard: View {
                 .foregroundStyle(DeadTheme.Colors.textPrimary)
                 .lineLimit(isCompact ? 1 : 2)
 
-            // City & Downloads
-            HStack {
+            // City, Badge & Downloads
+            HStack(spacing: DeadTheme.Spacing.sm) {
                 if !show.city.isEmpty {
                     Text(show.city)
                         .font(DeadTheme.Typography.caption())
                         .foregroundStyle(DeadTheme.Colors.textSecondary)
+                }
+
+                if let badge = primaryBadge {
+                    PopularityBadge(badge: badge)
                 }
 
                 Spacer()
@@ -172,12 +165,8 @@ struct ShowCard: View {
                     RoundedRectangle(cornerRadius: DeadTheme.Radius.md)
                         .strokeBorder(
                             LinearGradient(
-                                colors: badges.isEmpty ? [
-                                    DeadTheme.Colors.textTertiary.opacity(0.15),
-                                    Color.clear
-                                ] : [
-                                    badges.first!.color.opacity(0.25),
-                                    badges.first!.color.opacity(0.05),
+                                colors: [
+                                    (primaryBadge?.color ?? DeadTheme.Colors.textTertiary).opacity(badges.isEmpty ? 0.15 : 0.2),
                                     Color.clear
                                 ],
                                 startPoint: .topLeading,
