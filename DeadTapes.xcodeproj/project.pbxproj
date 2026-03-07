@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0784FBF8B51BE342D121F7AF /* ShowDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE53030432A6607D7403390 /* ShowDetailView.swift */; };
+		0A0389E83B5CC046E9253242 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364178F10B22753EBFE8556 /* PlayerViewModel.swift */; };
+		0BBB41E19DD845785494676B /* YearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403559F7BFD1D5DE0DAAE686 /* YearPickerView.swift */; };
+		154F0F5D138702D7D6F72DCE /* ShowBrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510F90E4DA232575B728ECE1 /* ShowBrowserViewModel.swift */; };
+		1D7ECE011039B4F7E760C158 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861D7551F9BA58E3EBDC0FD1 /* Theme.swift */; };
+		2DCA6709C427E2ECBDE1F102 /* AnimatedGradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D891A3F4A91B5E1F918864 /* AnimatedGradientBackground.swift */; };
+		33BCD9BC3DA6706810BE8DE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF261E5AA13E98AA7A1928A0 /* ContentView.swift */; };
+		3E80FFBAC428BD34E88333D4 /* NowPlayingFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF11019306445DFBE3BABC /* NowPlayingFullView.swift */; };
+		4179EA275B8F0D57342CF7F1 /* FavoriteShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F534C024C7D41642407CD363 /* FavoriteShow.swift */; };
+		51333423BF8823DE5A984876 /* ShowBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68381332EAB5FB271CA7DF7 /* ShowBrowserView.swift */; };
+		528FA3883639601D4AE12E43 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EBF767E60AC00A5B74EB99 /* LibraryView.swift */; };
+		53B28BDF66B9262CB06FF04A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EF27DB3745CD4D1A9B635E /* HomeViewModel.swift */; };
+		5A42A1AFEAC88537F43B1AC7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAAF6AB9114FC382EF9DF51 /* HomeView.swift */; };
+		5F8210F4A50828305B9A9829 /* ShowDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B68A05672798738E06A9445 /* ShowDetailViewModel.swift */; };
+		69DA93E20EEAD517C73C2C55 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716B82EB0DE40AF5CA0046B /* AudioPlayerService.swift */; };
+		80333F9DA0853DF71DE72B25 /* CircularProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597EE12B6A60EFED8DF20AE /* CircularProgressSlider.swift */; };
+		B46EF04B7F5EE5717FC9E045 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ABEED9FC88A255F25503A5 /* Show.swift */; };
+		BFBF90850854CB4DDD9F65CE /* ArchiveAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116B1CAB6EDED6955C388264 /* ArchiveAPI.swift */; };
+		C325FF93AC03E2D9F83FF16F /* DeadTapesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAB8E5F74B94A4FDACB6009 /* DeadTapesApp.swift */; };
+		D2BE089E8277C27A2738640D /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96303014769814B9C9813C5 /* Track.swift */; };
+		D2D71BC4F2D3413762A518C9 /* NowPlayingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3DC9E5E841D0E250D9C9C5 /* NowPlayingBar.swift */; };
+		E49A9BB078629C9BC9C0F772 /* ShowCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C95C58E01AA2010CEDBDBD0 /* ShowCard.swift */; };
+		EE6F90D66D2492D6970338AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33DF511236DFE4E6B1EF4ABF /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		05EB02409F72E2B3486EBD6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		116B1CAB6EDED6955C388264 /* ArchiveAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveAPI.swift; sourceTree = "<group>"; };
+		1C95C58E01AA2010CEDBDBD0 /* ShowCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCard.swift; sourceTree = "<group>"; };
+		22D891A3F4A91B5E1F918864 /* AnimatedGradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedGradientBackground.swift; sourceTree = "<group>"; };
+		22EBF767E60AC00A5B74EB99 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		31EF11019306445DFBE3BABC /* NowPlayingFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingFullView.swift; sourceTree = "<group>"; };
+		33DF511236DFE4E6B1EF4ABF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3DAAF6AB9114FC382EF9DF51 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		403559F7BFD1D5DE0DAAE686 /* YearPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearPickerView.swift; sourceTree = "<group>"; };
+		4597EE12B6A60EFED8DF20AE /* CircularProgressSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressSlider.swift; sourceTree = "<group>"; };
+		510F90E4DA232575B728ECE1 /* ShowBrowserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBrowserViewModel.swift; sourceTree = "<group>"; };
+		861D7551F9BA58E3EBDC0FD1 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		8716B82EB0DE40AF5CA0046B /* AudioPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
+		9B68A05672798738E06A9445 /* ShowDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewModel.swift; sourceTree = "<group>"; };
+		A96303014769814B9C9813C5 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		AF261E5AA13E98AA7A1928A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B0EF27DB3745CD4D1A9B635E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B68381332EAB5FB271CA7DF7 /* ShowBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBrowserView.swift; sourceTree = "<group>"; };
+		BD3DC9E5E841D0E250D9C9C5 /* NowPlayingBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingBar.swift; sourceTree = "<group>"; };
+		D364178F10B22753EBFE8556 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		D9152A0326AC54E3C051CD4E /* DeadTapes.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = DeadTapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9ABEED9FC88A255F25503A5 /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
+		ECAB8E5F74B94A4FDACB6009 /* DeadTapesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadTapesApp.swift; sourceTree = "<group>"; };
+		F534C024C7D41642407CD363 /* FavoriteShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShow.swift; sourceTree = "<group>"; };
+		FDE53030432A6607D7403390 /* ShowDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0AE815568B5974F7C7C883A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D9152A0326AC54E3C051CD4E /* DeadTapes.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		338B809C124CC34A0EB77668 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F534C024C7D41642407CD363 /* FavoriteShow.swift */,
+				E9ABEED9FC88A255F25503A5 /* Show.swift */,
+				A96303014769814B9C9813C5 /* Track.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		50E1D27539F1F0CEE841EDEE = {
+			isa = PBXGroup;
+			children = (
+				904FD9345926BD28C64941C3 /* DeadTapes */,
+				0AE815568B5974F7C7C883A5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		52DCC039643E35EA274919EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF261E5AA13E98AA7A1928A0 /* ContentView.swift */,
+				3DAAF6AB9114FC382EF9DF51 /* HomeView.swift */,
+				22EBF767E60AC00A5B74EB99 /* LibraryView.swift */,
+				BD3DC9E5E841D0E250D9C9C5 /* NowPlayingBar.swift */,
+				31EF11019306445DFBE3BABC /* NowPlayingFullView.swift */,
+				B68381332EAB5FB271CA7DF7 /* ShowBrowserView.swift */,
+				FDE53030432A6607D7403390 /* ShowDetailView.swift */,
+				7C228D58A19269BA2BC841CA /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7B88F67D183F7B0AF9CA2EB9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				116B1CAB6EDED6955C388264 /* ArchiveAPI.swift */,
+				8716B82EB0DE40AF5CA0046B /* AudioPlayerService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7C228D58A19269BA2BC841CA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				22D891A3F4A91B5E1F918864 /* AnimatedGradientBackground.swift */,
+				4597EE12B6A60EFED8DF20AE /* CircularProgressSlider.swift */,
+				1C95C58E01AA2010CEDBDBD0 /* ShowCard.swift */,
+				403559F7BFD1D5DE0DAAE686 /* YearPickerView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		835F7C7B0A6B4B00C75D14B0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B0EF27DB3745CD4D1A9B635E /* HomeViewModel.swift */,
+				D364178F10B22753EBFE8556 /* PlayerViewModel.swift */,
+				510F90E4DA232575B728ECE1 /* ShowBrowserViewModel.swift */,
+				9B68A05672798738E06A9445 /* ShowDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		904FD9345926BD28C64941C3 /* DeadTapes */ = {
+			isa = PBXGroup;
+			children = (
+				33DF511236DFE4E6B1EF4ABF /* Assets.xcassets */,
+				ECAB8E5F74B94A4FDACB6009 /* DeadTapesApp.swift */,
+				05EB02409F72E2B3486EBD6F /* Info.plist */,
+				338B809C124CC34A0EB77668 /* Models */,
+				7B88F67D183F7B0AF9CA2EB9 /* Services */,
+				B709E291693057030F11299E /* Theme */,
+				835F7C7B0A6B4B00C75D14B0 /* ViewModels */,
+				52DCC039643E35EA274919EA /* Views */,
+			);
+			path = DeadTapes;
+			sourceTree = "<group>";
+		};
+		B709E291693057030F11299E /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				861D7551F9BA58E3EBDC0FD1 /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF6DE217D13998772A7F7DAB /* DeadTapes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F02BC8861939DB77FF3DDDFE /* Build configuration list for PBXNativeTarget "DeadTapes" */;
+			buildPhases = (
+				40260AFBE48B9B3E342BFD49 /* Sources */,
+				64C2D43FE0AFD9BA8663F09F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeadTapes;
+			packageProductDependencies = (
+			);
+			productName = DeadTapes;
+			productReference = D9152A0326AC54E3C051CD4E /* DeadTapes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A34FAD26500AA46EA6C613E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					CF6DE217D13998772A7F7DAB = {
+						DevelopmentTeam = "";
+					};
+				};
+			};
+			buildConfigurationList = 35EBA8BAE220CE8754818415 /* Build configuration list for PBXProject "DeadTapes" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 50E1D27539F1F0CEE841EDEE;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 0AE815568B5974F7C7C883A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF6DE217D13998772A7F7DAB /* DeadTapes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		64C2D43FE0AFD9BA8663F09F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE6F90D66D2492D6970338AE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40260AFBE48B9B3E342BFD49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DCA6709C427E2ECBDE1F102 /* AnimatedGradientBackground.swift in Sources */,
+				BFBF90850854CB4DDD9F65CE /* ArchiveAPI.swift in Sources */,
+				69DA93E20EEAD517C73C2C55 /* AudioPlayerService.swift in Sources */,
+				80333F9DA0853DF71DE72B25 /* CircularProgressSlider.swift in Sources */,
+				33BCD9BC3DA6706810BE8DE1 /* ContentView.swift in Sources */,
+				C325FF93AC03E2D9F83FF16F /* DeadTapesApp.swift in Sources */,
+				4179EA275B8F0D57342CF7F1 /* FavoriteShow.swift in Sources */,
+				5A42A1AFEAC88537F43B1AC7 /* HomeView.swift in Sources */,
+				53B28BDF66B9262CB06FF04A /* HomeViewModel.swift in Sources */,
+				528FA3883639601D4AE12E43 /* LibraryView.swift in Sources */,
+				D2D71BC4F2D3413762A518C9 /* NowPlayingBar.swift in Sources */,
+				3E80FFBAC428BD34E88333D4 /* NowPlayingFullView.swift in Sources */,
+				0A0389E83B5CC046E9253242 /* PlayerViewModel.swift in Sources */,
+				B46EF04B7F5EE5717FC9E045 /* Show.swift in Sources */,
+				51333423BF8823DE5A984876 /* ShowBrowserView.swift in Sources */,
+				154F0F5D138702D7D6F72DCE /* ShowBrowserViewModel.swift in Sources */,
+				E49A9BB078629C9BC9C0F772 /* ShowCard.swift in Sources */,
+				0784FBF8B51BE342D121F7AF /* ShowDetailView.swift in Sources */,
+				5F8210F4A50828305B9A9829 /* ShowDetailViewModel.swift in Sources */,
+				1D7ECE011039B4F7E760C158 /* Theme.swift in Sources */,
+				D2BE089E8277C27A2738640D /* Track.swift in Sources */,
+				0BBB41E19DD845785494676B /* YearPickerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0D0BC089DCB4B4B7DE6C9D4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = DeadTapes/Info.plist;
+				INFOPLIST_KEY_NSAppTransportSecurity = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIBackgroundModes = audio;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				"INFOPLIST_KEY_UISupportedInterfaceOrientations~ipad" = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deadtapes.app;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3B331DE39BA07578791C104B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = DeadTapes/Info.plist;
+				INFOPLIST_KEY_NSAppTransportSecurity = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIBackgroundModes = audio;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				"INFOPLIST_KEY_UISupportedInterfaceOrientations~ipad" = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deadtapes.app;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A06CF4A135A7565408CBEFF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		FD42A680EFAFFCB4BBB110CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		35EBA8BAE220CE8754818415 /* Build configuration list for PBXProject "DeadTapes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A06CF4A135A7565408CBEFF6 /* Debug */,
+				FD42A680EFAFFCB4BBB110CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F02BC8861939DB77FF3DDDFE /* Build configuration list for PBXNativeTarget "DeadTapes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D0BC089DCB4B4B7DE6C9D4F /* Debug */,
+				3B331DE39BA07578791C104B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A34FAD26500AA46EA6C613E /* Project object */;
+}
