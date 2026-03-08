@@ -38,6 +38,7 @@ struct YearPickerView: View {
                 }
                 .padding(.horizontal, DeadTheme.Spacing.lg)
             }
+            .scrollClipDisabled()
             .onAppear {
                 proxy.scrollTo(selectedYear, anchor: .center)
             }
