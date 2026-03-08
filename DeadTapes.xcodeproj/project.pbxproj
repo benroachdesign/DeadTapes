@@ -23,6 +23,7 @@
 		5F8210F4A50828305B9A9829 /* ShowDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B68A05672798738E06A9445 /* ShowDetailViewModel.swift */; };
 		69DA93E20EEAD517C73C2C55 /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716B82EB0DE40AF5CA0046B /* AudioPlayerService.swift */; };
 		80333F9DA0853DF71DE72B25 /* CircularProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4597EE12B6A60EFED8DF20AE /* CircularProgressSlider.swift */; };
+		8F654ED6D88BF4F9F96927CC /* LoadingQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012D2B478EFF9C313EB53D94 /* LoadingQuoteView.swift */; };
 		9E4BB866156EFE9FEA900CFF /* ShowRankingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE8B1DCC010630D908D30D4 /* ShowRankingService.swift */; };
 		B46EF04B7F5EE5717FC9E045 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ABEED9FC88A255F25503A5 /* Show.swift */; };
 		BFBF90850854CB4DDD9F65CE /* ArchiveAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116B1CAB6EDED6955C388264 /* ArchiveAPI.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		012D2B478EFF9C313EB53D94 /* LoadingQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingQuoteView.swift; sourceTree = "<group>"; };
 		05EB02409F72E2B3486EBD6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		116B1CAB6EDED6955C388264 /* ArchiveAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveAPI.swift; sourceTree = "<group>"; };
 		1C95C58E01AA2010CEDBDBD0 /* ShowCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCard.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				22D891A3F4A91B5E1F918864 /* AnimatedGradientBackground.swift */,
 				4597EE12B6A60EFED8DF20AE /* CircularProgressSlider.swift */,
+				012D2B478EFF9C313EB53D94 /* LoadingQuoteView.swift */,
 				1C95C58E01AA2010CEDBDBD0 /* ShowCard.swift */,
 				403559F7BFD1D5DE0DAAE686 /* YearPickerView.swift */,
 			);
@@ -239,6 +242,7 @@
 				5A42A1AFEAC88537F43B1AC7 /* HomeView.swift in Sources */,
 				53B28BDF66B9262CB06FF04A /* HomeViewModel.swift in Sources */,
 				528FA3883639601D4AE12E43 /* LibraryView.swift in Sources */,
+				8F654ED6D88BF4F9F96927CC /* LoadingQuoteView.swift in Sources */,
 				D2D71BC4F2D3413762A518C9 /* NowPlayingBar.swift in Sources */,
 				3E80FFBAC428BD34E88333D4 /* NowPlayingFullView.swift in Sources */,
 				0A0389E83B5CC046E9253242 /* PlayerViewModel.swift in Sources */,

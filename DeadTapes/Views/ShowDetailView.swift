@@ -211,28 +211,9 @@ struct ShowDetailView: View {
     // MARK: - Loading
 
     private var loadingSection: some View {
-        VStack(spacing: DeadTheme.Spacing.sm) {
-            ForEach(0..<12, id: \.self) { _ in
-                HStack {
-                    RoundedRectangle(cornerRadius: 4)
-                        .fill(DeadTheme.Colors.cardBackground)
-                        .frame(width: 28, height: 16)
-
-                    RoundedRectangle(cornerRadius: 4)
-                        .fill(DeadTheme.Colors.cardBackground)
-                        .frame(height: 16)
-
-                    Spacer()
-
-                    RoundedRectangle(cornerRadius: 4)
-                        .fill(DeadTheme.Colors.cardBackground)
-                        .frame(width: 40, height: 16)
-                }
-                .shimmer()
-                .padding(.horizontal, DeadTheme.Spacing.xl)
-                .padding(.vertical, DeadTheme.Spacing.xs)
-            }
-        }
+        LoadingQuoteView()
+            .frame(maxWidth: .infinity)
+            .padding(.top, DeadTheme.Spacing.xl)
     }
 
     private func errorSection(_ error: String) -> some View {

@@ -80,17 +80,9 @@ struct ShowBrowserView: View {
 
                     // Show list
                     if viewModel.isLoading {
-                        ScrollView {
-                            VStack(spacing: DeadTheme.Spacing.sm) {
-                                ForEach(0..<8, id: \.self) { _ in
-                                    RoundedRectangle(cornerRadius: DeadTheme.Radius.md)
-                                        .fill(DeadTheme.Colors.cardBackground)
-                                        .frame(height: 100)
-                                        .shimmer()
-                                }
-                            }
-                            .padding(DeadTheme.Spacing.lg)
-                        }
+                        LoadingQuoteView()
+                            .frame(maxWidth: .infinity)
+                            .padding(.top, DeadTheme.Spacing.hero)
                     } else {
                         ScrollView {
                             LazyVStack(spacing: DeadTheme.Spacing.sm) {

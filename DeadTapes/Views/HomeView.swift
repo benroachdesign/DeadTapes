@@ -262,15 +262,9 @@ struct HomeView: View {
     // MARK: - States
 
     private var loadingSection: some View {
-        VStack(spacing: DeadTheme.Spacing.lg) {
-            ForEach(0..<3, id: \.self) { _ in
-                RoundedRectangle(cornerRadius: DeadTheme.Radius.lg)
-                    .fill(DeadTheme.Colors.cardBackground)
-                    .frame(height: 180)
-                    .shimmer()
-            }
-        }
-        .padding(.horizontal, DeadTheme.Spacing.lg)
+        LoadingQuoteView()
+            .frame(maxWidth: .infinity)
+            .padding(.top, DeadTheme.Spacing.hero)
     }
 
     private var errorSection: some View {
