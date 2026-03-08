@@ -18,13 +18,28 @@ final class ShowBrowserViewModel {
 
     var showCount: Int { filteredShows.count }
 
+    var isAllTime: Bool { selectedYear == 0 }
+
+    var headerTitle: String {
+        isAllTime ? "Top Shows" : "Shows"
+    }
+
+    var headerSubtitle: String {
+        isAllTime ? "TOP" : "BROWSE"
+    }
+
+    var countLabel: String {
+        isAllTime ? "\(showCount) top shows" : "\(showCount) shows"
+    }
+
     func loadShows() async {
         guard !isLoading else { return }
         isLoading = true
         errorMessage = nil
 
         do {
-            let results = try await ArchiveAPI.shared.searchShows(year: selectedYear)
+            let rows = isAllTime ? 100 : 50
+            let results = try await ArchiveAPI.shared.searchShows(year: selectedYear, rows: rows)
             await MainActor.run {
                 self.shows = results
                 self.filterShows()
@@ -56,8 +71,8 @@ final class ShowBrowserViewModel {
             result.append(.topAllTime(rank: allTimeRank))
         }
 
-        // Check Top 10 of Year (based on position in the full unfiltered list)
-        if let yearRank = rankingService.yearRank(for: show, in: shows), yearRank <= 10 {
+        // Check Top 10 of Year (only when browsing a specific year)
+        if !isAllTime, let yearRank = rankingService.yearRank(for: show, in: shows), yearRank <= 10 {
             result.append(.topOfYear(rank: yearRank, year: selectedYear))
         }
 

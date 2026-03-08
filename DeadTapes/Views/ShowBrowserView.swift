@@ -12,13 +12,14 @@ struct ShowBrowserView: View {
                 VStack(spacing: 0) {
                     // Header
                     VStack(alignment: .leading, spacing: DeadTheme.Spacing.md) {
-                        Text("BROWSE")
+                        Text(viewModel.headerSubtitle)
                             .font(.system(size: 13, weight: .bold, design: .monospaced))
                             .foregroundStyle(DeadTheme.Colors.accent)
                             .tracking(3)
                             .padding(.horizontal, DeadTheme.Spacing.xl)
+                            .padding(.horizontal, DeadTheme.Spacing.xl)
 
-                        Text("Shows")
+                        Text(viewModel.headerTitle)
                             .font(DeadTheme.Typography.largeTitle())
                             .foregroundStyle(DeadTheme.Colors.textPrimary)
                             .padding(.horizontal, DeadTheme.Spacing.xl)
@@ -66,7 +67,7 @@ struct ShowBrowserView: View {
 
                         // Result count
                         if !viewModel.isLoading {
-                            Text("\(viewModel.showCount) shows")
+                            Text(viewModel.countLabel)
                                 .font(DeadTheme.Typography.monoSmall())
                                 .foregroundStyle(DeadTheme.Colors.textTertiary)
                                 .padding(.horizontal, DeadTheme.Spacing.xl)
