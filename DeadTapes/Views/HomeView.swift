@@ -3,6 +3,7 @@ import SwiftUI
 struct HomeView: View {
     @State private var viewModel = HomeViewModel()
     @State private var showAppeared = false
+    @State private var randomShowScale: CGFloat = 1.0
 
     var body: some View {
         NavigationStack {
@@ -32,6 +33,15 @@ struct HomeView: View {
                         } else {
                             emptySection
                         }
+
+                        // Random Show button
+                        randomShowSection
+                            .padding(.top, DeadTheme.Spacing.md)
+
+                        // Top All Time
+                        if let topAllTime = viewModel.topAllTimeShow {
+                            topAllTimeSection(show: topAllTime)
+                        }
                     }
                     .padding(.bottom, 100) // Space for Now Playing bar
                 }
@@ -46,6 +56,9 @@ struct HomeView: View {
                     withAnimation(DeadTheme.Animation.smooth) {
                         showAppeared = true
                     }
+                }
+                if viewModel.topAllTimeShow == nil {
+                    await viewModel.loadTopAllTimeShow()
                 }
             }
         }
@@ -256,6 +269,243 @@ struct HomeView: View {
                 }
                 .padding(.horizontal, DeadTheme.Spacing.xl)
             }
+        }
+    }
+
+    // MARK: - Random Show
+
+    private var randomShowSection: some View {
+        VStack(spacing: DeadTheme.Spacing.md) {
+            // Section header
+            HStack {
+                Text("FEELING LUCKY")
+                    .font(.system(size: 11, weight: .bold, design: .monospaced))
+                    .foregroundStyle(DeadTheme.Colors.textTertiary)
+                    .tracking(2)
+                Spacer()
+            }
+            .padding(.horizontal, DeadTheme.Spacing.xl)
+
+            // Button + result
+            VStack(spacing: DeadTheme.Spacing.lg) {
+                Button {
+                    withAnimation(DeadTheme.Animation.springy) {
+                        randomShowScale = 0.95
+                    }
+                    Task {
+                        await viewModel.loadRandomShow()
+                        withAnimation(DeadTheme.Animation.springy) {
+                            randomShowScale = 1.0
+                        }
+                    }
+                } label: {
+                    HStack(spacing: DeadTheme.Spacing.sm) {
+                        Image(systemName: "dice.fill")
+                            .font(.system(size: 16))
+                            .symbolEffect(.bounce, value: viewModel.randomShow?.id)
+                        Text(viewModel.randomShow == nil ? "Random Show" : "Roll Again")
+                            .font(DeadTheme.Typography.headline())
+                    }
+                    .foregroundStyle(DeadTheme.Colors.textPrimary)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, DeadTheme.Spacing.lg)
+                    .background(
+                        RoundedRectangle(cornerRadius: DeadTheme.Radius.lg)
+                            .fill(DeadTheme.Colors.cardBackground)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: DeadTheme.Radius.lg)
+                                    .strokeBorder(
+                                        LinearGradient(
+                                            colors: [
+                                                DeadTheme.Colors.psychPurple.opacity(0.4),
+                                                DeadTheme.Colors.psychBlue.opacity(0.2),
+                                                Color.clear
+                                            ],
+                                            startPoint: .topLeading,
+                                            endPoint: .bottomTrailing
+                                        ),
+                                        lineWidth: 1
+                                    )
+                            )
+                    )
+                }
+                .disabled(viewModel.isLoadingRandom)
+                .scaleEffect(randomShowScale)
+                .padding(.horizontal, DeadTheme.Spacing.lg)
+
+                // Random show result
+                if viewModel.isLoadingRandom {
+                    ProgressView()
+                        .tint(DeadTheme.Colors.accent)
+                        .transition(.opacity)
+                } else if let show = viewModel.randomShow {
+                    NavigationLink(destination: ShowDetailView(show: show)) {
+                        randomShowCard(show: show)
+                    }
+                    .buttonStyle(.plain)
+                    .transition(.opacity.combined(with: .scale(scale: 0.95)))
+                }
+            }
+        }
+    }
+
+    private func randomShowCard(show: Show) -> some View {
+        HStack(spacing: DeadTheme.Spacing.lg) {
+            // Year
+            Text(show.yearString)
+                .font(.system(size: 32, weight: .black, design: .rounded))
+                .foregroundStyle(DeadTheme.eraGradient(for: show.year))
+
+            VStack(alignment: .leading, spacing: DeadTheme.Spacing.xs) {
+                Text(show.venue)
+                    .font(DeadTheme.Typography.body())
+                    .foregroundStyle(DeadTheme.Colors.textPrimary)
+                    .lineLimit(1)
+
+                HStack(spacing: DeadTheme.Spacing.sm) {
+                    if !show.city.isEmpty {
+                        Text(show.city)
+                            .font(DeadTheme.Typography.caption())
+                            .foregroundStyle(DeadTheme.Colors.textSecondary)
+                            .lineLimit(1)
+                    }
+                    if let rating = show.avgRating {
+                        HStack(spacing: 2) {
+                            Image(systemName: "star.fill")
+                                .font(.system(size: 9))
+                                .foregroundStyle(DeadTheme.Colors.accent)
+                            Text(String(format: "%.1f", rating))
+                                .font(DeadTheme.Typography.monoSmall())
+                                .foregroundStyle(DeadTheme.Colors.textSecondary)
+                        }
+                    }
+                }
+            }
+
+            Spacer()
+
+            Image(systemName: "chevron.right")
+                .font(.system(size: 12, weight: .semibold))
+                .foregroundStyle(DeadTheme.Colors.textTertiary)
+        }
+        .padding(DeadTheme.Spacing.lg)
+        .background(
+            RoundedRectangle(cornerRadius: DeadTheme.Radius.lg)
+                .fill(DeadTheme.Colors.cardBackground)
+                .overlay(
+                    RoundedRectangle(cornerRadius: DeadTheme.Radius.lg)
+                        .strokeBorder(
+                            DeadTheme.Colors.textTertiary.opacity(0.1),
+                            lineWidth: 1
+                        )
+                )
+        )
+        .padding(.horizontal, DeadTheme.Spacing.lg)
+    }
+
+    // MARK: - Top All Time Section
+
+    private func topAllTimeSection(show: Show) -> some View {
+        VStack(alignment: .leading, spacing: DeadTheme.Spacing.md) {
+            HStack {
+                Text("MOST PLAYED OF ALL TIME")
+                    .font(.system(size: 11, weight: .bold, design: .monospaced))
+                    .foregroundStyle(DeadTheme.Colors.textTertiary)
+                    .tracking(2)
+                Spacer()
+            }
+            .padding(.horizontal, DeadTheme.Spacing.xl)
+
+            NavigationLink(destination: ShowDetailView(show: show)) {
+                VStack(alignment: .leading, spacing: DeadTheme.Spacing.lg) {
+                    HStack(alignment: .top) {
+                        // Crown + rank
+                        HStack(spacing: 6) {
+                            Image(systemName: "crown.fill")
+                                .font(.system(size: 14))
+                                .foregroundStyle(Color(hex: "FFD700"))
+                            Text("#1")
+                                .font(.system(size: 14, weight: .bold, design: .monospaced))
+                                .foregroundStyle(Color(hex: "FFD700"))
+                        }
+
+                        Spacer()
+
+                        // Year
+                        Text(show.yearString)
+                            .font(.system(size: 36, weight: .black, design: .rounded))
+                            .foregroundStyle(
+                                LinearGradient(
+                                    colors: [Color(hex: "FFD700"), DeadTheme.Colors.accent],
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+                    }
+
+                    Text(show.venue)
+                        .font(DeadTheme.Typography.headline())
+                        .foregroundStyle(DeadTheme.Colors.textPrimary)
+                        .multilineTextAlignment(.leading)
+
+                    HStack {
+                        if !show.city.isEmpty {
+                            HStack(spacing: 4) {
+                                Image(systemName: "mappin.circle.fill")
+                                    .font(.system(size: 11))
+                                Text(show.city)
+                            }
+                            .font(DeadTheme.Typography.caption())
+                            .foregroundStyle(DeadTheme.Colors.textSecondary)
+                        }
+
+                        Spacer()
+
+                        HStack(spacing: DeadTheme.Spacing.md) {
+                            if let rating = show.avgRating {
+                                HStack(spacing: 2) {
+                                    Image(systemName: "star.fill")
+                                        .font(.system(size: 10))
+                                        .foregroundStyle(DeadTheme.Colors.accent)
+                                    Text(String(format: "%.1f", rating))
+                                        .font(DeadTheme.Typography.monoSmall())
+                                        .foregroundStyle(DeadTheme.Colors.textSecondary)
+                                }
+                            }
+
+                            HStack(spacing: 3) {
+                                Image(systemName: "arrow.down.circle.fill")
+                                    .font(.system(size: 10))
+                                Text(show.formattedDownloads)
+                                    .font(DeadTheme.Typography.monoSmall())
+                            }
+                            .foregroundStyle(DeadTheme.Colors.textTertiary)
+                        }
+                    }
+                }
+                .padding(DeadTheme.Spacing.xl)
+                .background(
+                    RoundedRectangle(cornerRadius: DeadTheme.Radius.xl)
+                        .fill(DeadTheme.Colors.cardBackground)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: DeadTheme.Radius.xl)
+                                .strokeBorder(
+                                    LinearGradient(
+                                        colors: [
+                                            Color(hex: "FFD700").opacity(0.3),
+                                            Color(hex: "FFD700").opacity(0.05),
+                                            Color.clear
+                                        ],
+                                        startPoint: .topLeading,
+                                        endPoint: .bottomTrailing
+                                    ),
+                                    lineWidth: 1
+                                )
+                        )
+                )
+            }
+            .buttonStyle(.plain)
+            .padding(.horizontal, DeadTheme.Spacing.lg)
         }
     }
 

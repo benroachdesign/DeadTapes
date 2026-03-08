@@ -4,7 +4,10 @@ import Observation
 @Observable
 final class HomeViewModel {
     var todayShows: [Show] = []
+    var topAllTimeShow: Show?
+    var randomShow: Show?
     var isLoading = false
+    var isLoadingRandom = false
     var errorMessage: String?
 
     var todayDateString: String {
@@ -25,6 +28,8 @@ final class HomeViewModel {
         Array(todayShows.dropFirst())
     }
 
+    // MARK: - Load Today in History
+
     func loadTodayInHistory() async {
         guard !isLoading else { return }
         isLoading = true
@@ -44,6 +49,45 @@ final class HomeViewModel {
             await MainActor.run {
                 self.errorMessage = error.localizedDescription
                 self.isLoading = false
+            }
+        }
+    }
+
+    // MARK: - Load Top All Time Show
+
+    func loadTopAllTimeShow() async {
+        do {
+            let shows = try await ArchiveAPI.shared.searchShows(year: 0, rows: 1)
+            await MainActor.run {
+                self.topAllTimeShow = shows.first
+            }
+        } catch {
+            // Silently fail — this is a bonus feature
+        }
+    }
+
+    // MARK: - Random Show (4.0+ rating)
+
+    func loadRandomShow() async {
+        isLoadingRandom = true
+
+        do {
+            // Fetch a random page of well-rated shows
+            let randomYear = Int.random(in: 1966...1995)
+            let shows = try await ArchiveAPI.shared.searchShows(year: randomYear, rows: 50)
+
+            // Filter for 4.0+ rating, then pick a random one
+            let goodShows = shows.filter { ($0.avgRating ?? 0) >= 4.0 }
+
+            await MainActor.run {
+                if let pick = goodShows.randomElement() ?? shows.randomElement() {
+                    self.randomShow = pick
+                }
+                self.isLoadingRandom = false
+            }
+        } catch {
+            await MainActor.run {
+                self.isLoadingRandom = false
             }
         }
     }
