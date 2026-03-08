@@ -19,7 +19,7 @@ actor ArchiveAPI {
 
     // MARK: - Search Shows by Year
 
-    func searchShows(year: Int, page: Int = 1, rows: Int = 50) async throws -> [Show] {
+     func searchShows(year: Int, page: Int = 1, rows: Int = 50) async throws -> [Show] {
         let fields = [
             "identifier", "title", "date", "avg_rating",
             "num_reviews", "downloads", "source", "venue", "coverage"
@@ -36,6 +36,25 @@ actor ArchiveAPI {
         let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
 
         let urlString = "\(baseSearchURL)?q=\(encodedQuery)&\(fieldParams)&output=json&rows=\(rows)&page=\(page)&sort[]=downloads+desc"
+
+        let data = try await fetchData(urlString: urlString)
+        let response = try JSONDecoder().decode(ArchiveSearchResponse.self, from: data)
+        return response.response.docs.compactMap { $0.toShow() }
+    }
+
+    // MARK: - Trending (sorted by weekly downloads)
+
+    func fetchTrending(rows: Int = 5) async throws -> [Show] {
+        let fields = [
+            "identifier", "title", "date", "avg_rating",
+            "num_reviews", "downloads", "source", "venue", "coverage"
+        ]
+        let fieldParams = fields.map { "fl[]=\($0)" }.joined(separator: "&")
+
+        let query = "collection:GratefulDead"
+        let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
+
+        let urlString = "\(baseSearchURL)?q=\(encodedQuery)&\(fieldParams)&output=json&rows=\(rows)&sort[]=week+desc"
 
         let data = try await fetchData(urlString: urlString)
         let response = try JSONDecoder().decode(ArchiveSearchResponse.self, from: data)

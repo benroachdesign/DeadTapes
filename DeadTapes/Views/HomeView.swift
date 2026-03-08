@@ -19,28 +19,30 @@ struct HomeView: View {
 
                         if viewModel.isLoading {
                             loadingSection
-                        } else if let topShow = viewModel.topShow {
-                            // Hero show card
-                            heroCard(for: topShow)
-                                .transition(.opacity.combined(with: .scale(scale: 0.95)))
-
-                            // Other shows on this day
-                            if !viewModel.otherShows.isEmpty {
-                                otherShowsSection
-                            }
-                        } else if viewModel.errorMessage != nil {
-                            errorSection
                         } else {
-                            emptySection
-                        }
+                            if let topShow = viewModel.topShow {
+                                // Hero show card
+                                heroCard(for: topShow)
+                                    .transition(.opacity.combined(with: .scale(scale: 0.95)))
 
-                        // Random Show button
-                        randomShowSection
-                            .padding(.top, DeadTheme.Spacing.md)
+                                // Other shows on this day
+                                if !viewModel.otherShows.isEmpty {
+                                    otherShowsSection
+                                }
+                            } else if viewModel.errorMessage != nil {
+                                errorSection
+                            } else {
+                                emptySection
+                            }
 
-                        // Top All Time
-                        if let topAllTime = viewModel.topAllTimeShow {
-                            topAllTimeSection(show: topAllTime)
+                            // Random Show button
+                            randomShowSection
+                                .padding(.top, DeadTheme.Spacing.md)
+
+                            // Trending This Week
+                            if let trending = viewModel.trendingShow {
+                                trendingSection(show: trending)
+                            }
                         }
                     }
                     .padding(.bottom, 100) // Space for Now Playing bar
@@ -57,8 +59,8 @@ struct HomeView: View {
                         showAppeared = true
                     }
                 }
-                if viewModel.topAllTimeShow == nil {
-                    await viewModel.loadTopAllTimeShow()
+                if viewModel.trendingShow == nil {
+                    await viewModel.loadTrendingShow()
                 }
             }
         }
@@ -403,12 +405,12 @@ struct HomeView: View {
         .padding(.horizontal, DeadTheme.Spacing.lg)
     }
 
-    // MARK: - Top All Time Section
+    // MARK: - Trending Section
 
-    private func topAllTimeSection(show: Show) -> some View {
+    private func trendingSection(show: Show) -> some View {
         VStack(alignment: .leading, spacing: DeadTheme.Spacing.md) {
             HStack {
-                Text("MOST PLAYED OF ALL TIME")
+                Text("TRENDING THIS WEEK")
                     .font(.system(size: 11, weight: .bold, design: .monospaced))
                     .foregroundStyle(DeadTheme.Colors.textTertiary)
                     .tracking(2)

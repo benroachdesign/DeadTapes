@@ -4,7 +4,7 @@ import Observation
 @Observable
 final class HomeViewModel {
     var todayShows: [Show] = []
-    var topAllTimeShow: Show?
+    var trendingShow: Show?
     var randomShow: Show?
     var isLoading = false
     var isLoadingRandom = false
@@ -53,13 +53,13 @@ final class HomeViewModel {
         }
     }
 
-    // MARK: - Load Top All Time Show
+    // MARK: - Load Trending Show (most downloaded this week)
 
-    func loadTopAllTimeShow() async {
+    func loadTrendingShow() async {
         do {
-            let shows = try await ArchiveAPI.shared.searchShows(year: 0, rows: 1)
+            let shows = try await ArchiveAPI.shared.fetchTrending(rows: 1)
             await MainActor.run {
-                self.topAllTimeShow = shows.first
+                self.trendingShow = shows.first
             }
         } catch {
             // Silently fail — this is a bonus feature
