@@ -4,8 +4,8 @@ struct YearPickerView: View {
     @Binding var selectedYear: Int
     var onSelect: (Int) -> Void
 
-    // 0 = "All Time Top" special value
-    let allItems: [Int] = [0] + Array(1965...1995)
+    // 0 = "All Time Top" special value, placed after 1995
+    let allItems: [Int] = Array(1965...1995) + [0]
 
     var body: some View {
         ScrollViewReader { proxy in
