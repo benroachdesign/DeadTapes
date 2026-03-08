@@ -75,8 +75,8 @@ struct LoadingQuoteView: View {
             // Quote
             VStack(spacing: DeadTheme.Spacing.xs) {
                 Text("\"" + quote.lyric + "\"")
-                    .font(DeadTheme.Typography.body())
-                    .foregroundStyle(DeadTheme.Colors.textSecondary)
+                    .font(DeadTheme.Typography.headline())
+                    .foregroundStyle(DeadTheme.Colors.textPrimary)
                     .multilineTextAlignment(.center)
                     .italic()
                     .lineLimit(3)

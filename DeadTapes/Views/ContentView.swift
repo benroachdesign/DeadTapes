@@ -12,7 +12,7 @@ struct ContentView: View {
             TabView(selection: $selectedTab) {
                 HomeView()
                     .tabItem {
-                        Label("Today", systemImage: "calendar.badge.clock")
+                        Label("Home", systemImage: "house.fill")
                     }
                     .tag(0)
 

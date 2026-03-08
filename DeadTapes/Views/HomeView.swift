@@ -14,12 +14,11 @@ struct HomeView: View {
 
                 ScrollView {
                     VStack(spacing: DeadTheme.Spacing.xl) {
-                        // Header
-                        headerSection
-
                         if viewModel.isLoading {
                             loadingSection
                         } else {
+                            // Header
+                            headerSection
                             if let topShow = viewModel.topShow {
                                 // Hero show card
                                 heroCard(for: topShow)
