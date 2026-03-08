@@ -14,10 +14,13 @@ struct AnimatedGradientBackground: View {
         MeshGradient(
             width: 3, height: 3,
             points: [
+                // Top row: pinned to edges
                 [0.0, 0.0], [0.5, 0.0], [1.0, 0.0],
-                [animateGradient ? 0.0 : 0.1, 0.5],
-                [animateGradient ? 0.8 : 0.5, animateGradient ? 0.3 : 0.5],
-                [animateGradient ? 0.9 : 1.0, 0.5],
+                // Middle row: only center point moves
+                [0.0, 0.5],
+                [animateGradient ? 0.7 : 0.3, animateGradient ? 0.35 : 0.65],
+                [1.0, 0.5],
+                // Bottom row: pinned to edges
                 [0.0, 1.0], [0.5, 1.0], [1.0, 1.0]
             ],
             colors: [
@@ -32,6 +35,7 @@ struct AnimatedGradientBackground: View {
                 DeadTheme.Colors.background
             ]
         )
+        .scaleEffect(1.2)
         .ignoresSafeArea()
         .onAppear {
             withAnimation(
