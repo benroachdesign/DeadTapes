@@ -20,10 +20,9 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1974,
             "shows": [
-              "gd1977-05-08.111493.mtx.seamons.sbeok.flac16",
-              "gd1978-04-16.sbd.miller.97746.sbeok.flac16",
-              "gd1989-12-31.139967.sbd.miller.flac2448",
-              "gd1974-06-23.sbd.miller.110515.flac16"
+              "gd95-07-09.sbd.7233.sbeok.shnf",
+              "gd89-07-17.sbd.unknown.17702.sbeok.shnf",
+              "gd89-10-09.sbd.serafin.7721.sbeok.shnf"
             ]
           },
           {
@@ -33,9 +32,10 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1977,
             "shows": [
-              "gd1977-05-08.111493.mtx.seamons.sbeok.flac16",
-              "gd1978-04-16.sbd.miller.97746.sbeok.flac16",
-              "gd1989-12-31.139967.sbd.miller.flac2448"
+              "gd70-05-15.early-late.sbd.97.sbeok.shnf",
+              "gd1969-01-18.tv.ukmutt.33931.flac16",
+              "gd1977-05-08.shure57.stevenson.29303.flac16",
+              "gd87-04-03.sennme80.clark-miller.24898.sbeok.shnf"
             ]
           },
           {
@@ -45,11 +45,9 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1967,
             "shows": [
-              "gd69-02-27.sbd.16track.kaplan.6315.sbeok.shnf",
-              "gd1969-11-08.sbd.wise.174.sbeok.shnf",
-              "gd70-02-13.sbd.hollister.174.sbeok.shnf",
-              "gd1972-04-08.sbd.miller.81882.sbeok.flac16",
-              "gd1989-10-09.sbd.walker-scotton.miller.81308.sbeok.flac16"
+              "gd89-07-17.sbd.unknown.17702.sbeok.shnf",
+              "gd90-07-23.sbd.oconner.7612.sbeok.shnf",
+              "gd87-04-03.sennme80.clark-miller.24898.sbeok.shnf"
             ]
           },
           {
@@ -59,9 +57,9 @@ class SongDatabase {
             "originalArtist": "Bonnie Dobson",
             "debutYear": 1967,
             "shows": [
-              "gd1977-05-08.111493.mtx.seamons.sbeok.flac16",
-              "gd1972-05-26.sbd.miller.93041.sbeok.flac16",
-              "gd1974-10-18.sbd.miller.110006.flac16"
+              "gd1970-11-08.aud.weiner.28609.sbeok.shnf",
+              "gd71-02-18.sbd.orf.107.sbeok.shnf",
+              "gd72-08-27.sbd.orf.3328.sbeok.shnf"
             ]
           },
           {
@@ -71,9 +69,9 @@ class SongDatabase {
             "originalArtist": "Bob Weir",
             "debutYear": 1971,
             "shows": [
-              "gd1972-08-27.sbd.miller.72008.sbeok.flac16",
-              "gd1974-05-19.sbd.miller.110515.flac16",
-              "gd1972-11-18.sbd.miller.110006.flac16"
+              "gd71-12-14.sbd.deibert.12763.sbeok.shnf",
+              "gd75-08-13.fm.vernon.23661.sbeok.shnf",
+              "gd89-07-17.sbd.unknown.17702.sbeok.shnf"
             ]
           },
           {
@@ -83,9 +81,11 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1967,
             "shows": [
-              "gd1972-05-26.sbd.miller.93041.sbeok.flac16",
-              "gd69-02-27.sbd.16track.kaplan.6315.sbeok.shnf",
-              "gd1970-05-02.sbd.miller.73350.sbeok.flac16"
+              "gd73-06-10.sbd.hollister.174.sbeok.shnf",
+              "gd1977-06-09.28614.sbeok.flac16",
+              "gd77-05-08.sbd.hicks.4982.sbeok.shnf",
+              "gd78-01-22.sbd.popi.4974.sbeok.shnf",
+              "gd89-10-09.sbd.serafin.7721.sbeok.shnf"
             ]
           },
           {
@@ -95,9 +95,9 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1973,
             "shows": [
-              "gd1973-11-11.sbd.miller.79996.sbeok.flac16",
-              "gd1974-08-06.sbd.miller.110006.flac16",
-              "gd1990-03-29.sbd.miller.92800.sbeok.flac16"
+              "gd1969-01-18.tv.ukmutt.33931.flac16",
+              "gd77-05-08.sbd.hicks.4982.sbeok.shnf",
+              "gd1977-06-09.28614.sbeok.flac16"
             ]
           },
           {
@@ -107,9 +107,10 @@ class SongDatabase {
             "originalArtist": "The Crickets",
             "debutYear": 1969,
             "shows": [
-              "gd1977-05-08.111493.mtx.seamons.sbeok.flac16",
-              "gd1971-11-15.sbd.miller.97746.sbeok.flac16",
-              "gd1989-07-04.139967.sbd.miller.flac2448"
+              "gd73-06-10.sbd.hollister.174.sbeok.shnf",
+              "gd75-08-13.fm.vernon.23661.sbeok.shnf",
+              "gd69-12-26.sbd.murphy.1821.sbeok.shnf",
+              "gd70-02-11.early-late.sbd.sacks.90.sbefail.shnf"
             ]
           },
           {
@@ -119,9 +120,9 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1968,
             "shows": [
-              "gd1977-05-08.111493.mtx.seamons.sbeok.flac16",
-              "gd69-02-27.sbd.16track.kaplan.6315.sbeok.shnf",
-              "gd1970-05-15.sbd.miller.73350.sbeok.flac16"
+              "gd_nrps70-05-15.sbd.reynolds-kaplan.29473.shnf",
+              "gd1978-12-16.sonyecm250-no-dolby.walker-scotton.miller.82212.sbeok.flac16",
+              "gd86-12-15.nakcm101-dwonk.25263.sbeok.flacf"
             ]
           },
           {
@@ -131,9 +132,9 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1977,
             "shows": [
-              "gd1977-02-26.sbd.miller.72008.sbeok.flac16",
-              "gd1977-05-28.sbd.miller.110006.flac16",
-              "gd1990-03-15.sbd.miller.92800.sbeok.flac16"
+              "gd89-10-09.sbd.serafin.7721.sbeok.shnf",
+              "gd74-02-24.sbd.windsor.199.sbefail.shnf",
+              "gd90-07-23.sbd.oconner.7612.sbeok.shnf"
             ]
           },
           {
@@ -143,9 +144,10 @@ class SongDatabase {
             "originalArtist": "Jerry Garcia",
             "debutYear": 1971,
             "shows": [
-              "gd1977-05-28.sbd.miller.110006.flac16",
-              "gd1974-05-19.sbd.miller.110515.flac16",
-              "gd1980-05-15.sbd.miller.73350.sbeok.flac16"
+              "gd90-03-29.aud-fob.set2.unknown.1317.sbeok.shnf",
+              "gd73-02-09.sbd.bertha-fink.14939.sbeok.shnf",
+              "gd77-09-03.sbd.unk.276.sbefixed.shnf",
+              "gd70-02-11.early-late.sbd.sacks.90.sbefail.shnf"
             ]
           },
           {
@@ -155,9 +157,10 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1968,
             "shows": [
-              "gd1972-08-27.sbd.miller.72008.sbeok.flac16",
-              "gd1974-06-26.sbd.miller.110006.flac16",
-              "gd1990-03-22.sbd.miller.92800.sbeok.flac16"
+              "gd69-12-26.sbd.murphy.1821.sbeok.shnf",
+              "gd90-03-29.sbd.nawrocki.3389.sbeok.shnf",
+              "gd77-09-03.sbd.unk.276.sbefixed.shnf",
+              "gd1969-01-18.tv.ukmutt.33931.flac16"
             ]
           },
           {
@@ -167,9 +170,10 @@ class SongDatabase {
             "originalArtist": "Traditional",
             "debutYear": 1965,
             "shows": [
-              "gd1972-08-27.sbd.miller.72008.sbeok.flac16",
-              "gd1974-06-26.sbd.miller.110006.flac16",
-              "gd1990-03-22.sbd.miller.92800.sbeok.flac16"
+              "gd78-01-22.sbd.popi.4974.sbeok.shnf",
+              "gd69-12-26.sbd.murphy.1821.sbeok.shnf",
+              "gd1969-01-18.tv.ukmutt.33931.flac16",
+              "gd77-05-08.maizner.hicks.5002.sbeok.shnf"
             ]
           },
           {
@@ -179,9 +183,10 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1978,
             "shows": [
-              "gd1984-12-31.sbd.walker-scotton.miller.81308.sbeok.flac16",
-              "gd1979-11-25.sbd.miller.97746.sbeok.flac16",
-              "gd1981-05-16.sbd.miller.110515.flac16"
+              "gd70-02-11.early-late.sbd.sacks.90.sbefail.shnf",
+              "gd77-05-08.maizner.hicks.5002.sbeok.shnf",
+              "gd1977-06-09.28614.sbeok.flac16",
+              "gd71-02-18.sbd.orf.107.sbeok.shnf"
             ]
           },
           {
@@ -191,9 +196,11 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1979,
             "shows": [
-              "gd1980-05-15.sbd.miller.73350.sbeok.flac16",
-              "gd1981-05-16.sbd.miller.110515.flac16",
-              "gd1990-03-15.sbd.miller.92800.sbeok.flac16"
+              "gd89-10-09.sbd.serafin.7721.sbeok.shnf",
+              "gd_nrps70-05-15.sbd.reynolds-kaplan.29473.shnf",
+              "gd86-12-15.nakcm101-dwonk.25263.sbeok.flacf",
+              "gd77-09-03.sbd.unk.276.sbefixed.shnf",
+              "gd71-02-18.sbd.orf.107.sbeok.shnf"
             ]
           },
           {
@@ -203,9 +210,9 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1975,
             "shows": [
-              "gd1975-08-13.sbd.hollister.174.sbeok.shnf",
-              "gd1977-05-09.sbd.miller.73350.sbeok.flac16",
-              "gd1989-10-09.sbd.walker-scotton.miller.81308.sbeok.flac16"
+              "gd89-10-09.sbd.serafin.7721.sbeok.shnf",
+              "gd1975-06-17.aud.unknown.87560.flac16",
+              "gd75-08-13.fm.vernon.23661.sbeok.shnf"
             ]
           },
           {
@@ -215,9 +222,10 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1975,
             "shows": [
-              "gd1975-08-13.sbd.hollister.174.sbeok.shnf",
-              "gd1977-05-09.sbd.miller.73350.sbeok.flac16",
-              "gd1989-10-09.sbd.walker-scotton.miller.81308.sbeok.flac16"
+              "gd72-08-27.sbd.orf.3328.sbeok.shnf",
+              "gd89-07-07.aud.wiley.7855.sbeok.shnf",
+              "gd70-05-15.early-late.sbd.97.sbeok.shnf",
+              "gd71-02-18.sbd.orf.107.sbeok.shnf"
             ]
           },
           {
@@ -227,9 +235,9 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1974,
             "shows": [
-              "gd1975-08-13.sbd.hollister.174.sbeok.shnf",
-              "gd1977-05-09.sbd.miller.73350.sbeok.flac16",
-              "gd1989-10-09.sbd.walker-scotton.miller.81308.sbeok.flac16"
+              "gd79-01-11.gatto.kempka.308.sbeok.shnf",
+              "gd1970-11-08.aud.weiner.28609.sbeok.shnf",
+              "gd89-07-04.aud.wiley.9045.sbeok.shnf"
             ]
           },
           {
@@ -239,9 +247,9 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1970,
             "shows": [
-              "gd1972-05-26.sbd.miller.93041.sbeok.flac16",
-              "gd1974-05-19.sbd.miller.110515.flac16",
-              "gd1989-12-31.139967.sbd.miller.flac2448"
+              "gd70-02-11.early-late.sbd.sacks.90.sbefail.shnf",
+              "gd73-07-28.sbd.weiner.14196.sbeok.shnf",
+              "gd1983-10-17.mtx.seamons.fix2.92424.sbeok.flac16"
             ]
           },
           {
@@ -251,9 +259,11 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1969,
             "shows": [
-              "gd1970-05-15.sbd.miller.73350.sbeok.flac16",
-              "gd1974-06-26.sbd.miller.110006.flac16",
-              "gd1977-12-29.sbd.miller.73350.sbeok.flac16"
+              "gd77-09-03.sbd.unk.276.sbefixed.shnf",
+              "gd1975-06-17.aud.unknown.87560.flac16",
+              "gd90-07-23.sbd.oconner.7612.sbeok.shnf",
+              "gd71-12-14.sbd.deibert.12763.sbeok.shnf",
+              "gd77-05-05.sbd.stephens.8832.sbeok.shnf"
             ]
           },
           {
@@ -263,9 +273,10 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1971,
             "shows": [
-              "gd1971-02-18.sbd.miller.97746.sbeok.flac16",
-              "gd1977-05-28.sbd.miller.110006.flac16",
-              "gd1989-07-04.139967.sbd.miller.flac2448"
+              "gd86-12-15.nakcm101-dwonk.25263.sbeok.flacf",
+              "gd1977-06-09.28614.sbeok.flac16",
+              "gd89-07-17.sbd.unknown.17702.sbeok.shnf",
+              "gd87-04-03.sennme80.clark-miller.24898.sbeok.shnf"
             ]
           },
           {
@@ -275,9 +286,10 @@ class SongDatabase {
             "originalArtist": "Jerry Garcia",
             "debutYear": 1971,
             "shows": [
-              "gd1972-08-27.sbd.miller.72008.sbeok.flac16",
-              "gd1973-11-11.sbd.miller.79996.sbeok.flac16",
-              "gd1990-03-29.sbd.miller.92800.sbeok.flac16"
+              "gd1983-10-17.mtx.seamons.fix2.92424.sbeok.flac16",
+              "gd70-05-15.early-late.sbd.97.sbeok.shnf",
+              "gd90-03-29.sbd.nawrocki.3389.sbeok.shnf",
+              "gd71-08-06.aud.bertrando.yerys.129.sbeok.shnf"
             ]
           },
           {
@@ -287,9 +299,10 @@ class SongDatabase {
             "originalArtist": "Bob Weir",
             "debutYear": 1974,
             "shows": [
-              "gd1977-05-09.sbd.miller.73350.sbeok.flac16",
-              "gd1980-05-15.sbd.miller.73350.sbeok.flac16",
-              "gd1990-03-22.sbd.miller.92800.sbeok.flac16"
+              "gd70-09-20.aud.remaster.sirmick.27583.sbeok.shnf",
+              "gd79-01-08.gatto.glyde.10283.sbeok.shnf",
+              "gd70-02-11.early-late.sbd.sacks.90.sbefail.shnf",
+              "gd95-07-09.sbd.7233.sbeok.shnf"
             ]
           },
           {
@@ -299,9 +312,11 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1969,
             "shows": [
-              "gd1970-05-02.sbd.miller.73350.sbeok.flac16",
-              "gd1977-11-04.sbd.miller.73350.sbeok.flac16",
-              "gd1989-10-09.sbd.walker-scotton.miller.81308.sbeok.flac16"
+              "gd77-02-26.sbd.alphadog.9752.sbeok.shnf",
+              "gd73-06-10.sbd.hollister.174.sbeok.shnf",
+              "gd90-03-29.aud-fob.set2.unknown.1317.sbeok.shnf",
+              "gd77-05-08.maizner.hicks.5002.sbeok.shnf",
+              "gd78-01-22.sbd.popi.4974.sbeok.shnf"
             ]
           },
           {
@@ -311,9 +326,11 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1977,
             "shows": [
-              "gd1977-05-08.111493.mtx.seamons.sbeok.flac16",
-              "gd1978-04-16.sbd.miller.97746.sbeok.flac16",
-              "gd1990-03-29.sbd.miller.92800.sbeok.flac16"
+              "gd87-09-18.sbd.samaritano.20025.sbeok.shnf",
+              "gd74-05-19.sbd.clugston.6957.sbeok.shnf",
+              "gd1978-12-16.sonyecm250-no-dolby.walker-scotton.miller.82212.sbeok.flac16",
+              "gd74-08-06.merin.weiner.gdADT.5914.sbefail.shnf",
+              "gd1975-06-17.aud.unknown.87560.flac16"
             ]
           },
           {
@@ -323,9 +340,11 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1971,
             "shows": [
-              "gd1972-05-26.sbd.miller.93041.sbeok.flac16",
-              "gd1977-05-08.111493.mtx.seamons.sbeok.flac16",
-              "gd1990-03-22.sbd.miller.92800.sbeok.flac16"
+              "gd74-05-19.sbd.clugston.6957.sbeok.shnf",
+              "gd1978-12-16.sonyecm250-no-dolby.walker-scotton.miller.82212.sbeok.flac16",
+              "gd71-08-06.aud.bertrando.yerys.129.sbeok.shnf",
+              "gd74-02-24.sbd.windsor.199.sbefail.shnf",
+              "gd77-05-08.sbd.hicks.4982.sbeok.shnf"
             ]
           },
           {
@@ -335,9 +354,11 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1971,
             "shows": [
-              "gd1972-08-27.sbd.miller.72008.sbeok.flac16",
-              "gd1977-05-08.111493.mtx.seamons.sbeok.flac16",
-              "gd1990-03-29.sbd.miller.92800.sbeok.flac16"
+              "gd71-02-18.sbd.orf.107.sbeok.shnf",
+              "gd73-02-15.sbd.hall.1580.sbeok.shnf",
+              "gd95-07-09.sbd.7233.sbeok.shnf",
+              "gd75-08-13.fm.vernon.23661.sbeok.shnf",
+              "gd1975-06-17.aud.unknown.87560.flac16"
             ]
           },
           {
@@ -347,9 +368,10 @@ class SongDatabase {
             "originalArtist": "Traditional",
             "debutYear": 1970,
             "shows": [
-              "gd1971-02-18.sbd.miller.97746.sbeok.flac16",
-              "gd1972-05-26.sbd.miller.93041.sbeok.flac16",
-              "gd1974-10-18.sbd.miller.110006.flac16"
+              "gd77-05-08.maizner.hicks.5002.sbeok.shnf",
+              "gd75-08-13.fm.vernon.23661.sbeok.shnf",
+              "gd65-11-03.sbd.vernon.9044.sbeok.shnf",
+              "gd69-12-26.sbd.murphy.1821.sbeok.shnf"
             ]
           },
           {
@@ -359,9 +381,9 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1970,
             "shows": [
-              "gd1970-05-15.sbd.miller.73350.sbeok.flac16",
-              "gd1980-10-31.sbd.miller.73350.sbeok.flac16",
-              "gd1988-09-03.sbd.miller.73350.sbeok.flac16"
+              "gd1983-10-17.mtx.seamons.fix2.92424.sbeok.flac16",
+              "gd74-05-19.sbd.clugston.6957.sbeok.shnf",
+              "gd78-01-22.sbd.popi.4974.sbeok.shnf"
             ]
           },
           {
@@ -371,9 +393,10 @@ class SongDatabase {
             "originalArtist": "Grateful Dead",
             "debutYear": 1972,
             "shows": [
-              "gd1973-11-11.sbd.miller.79996.sbeok.flac16",
-              "gd1977-05-19.sbd.miller.73350.sbeok.flac16",
-              "gd1989-07-04.139967.sbd.miller.flac2448"
+              "gd77-09-03.sbd.unk.276.sbefixed.shnf",
+              "gd1975-06-17.aud.unknown.87560.flac16",
+              "gd1983-10-17.mtx.seamons.fix2.92424.sbeok.flac16",
+              "gd1977-06-09.28614.sbeok.flac16"
             ]
           }
         ]
