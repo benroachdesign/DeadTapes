@@ -12,17 +12,17 @@ struct LoadingQuote {
         // Jack Straw
         LoadingQuote(lyric: "Jack Straw from Wichita, cut his load time down…", song: "Jack Straw"),
         // Truckin'
-        LoadingQuote(lyric: "Loadin'… I got my chips cashed in…", song: "Truckin'"),
+        LoadingQuote(lyric: "What a loooooong, strange load it's been…", song: "Truckin'"),
         // Casey Jones
         LoadingQuote(lyric: "Drivin' that train, high on buffering…", song: "Casey Jones"),
         // Friend of the Devil
-        LoadingQuote(lyric: "I set out loading, I was trailed by twenty GB...", song: "Friend of the Devil"),
+        LoadingQuote(lyric: "I set out loading, I was trailed by twenty GB…", song: "Friend of the Devil"),
         // Fire on the Mountain
         LoadingQuote(lyric: "Long distance loader, what you standing there for?", song: "Fire on the Mountain"),
         // Touch of Grey
         LoadingQuote(lyric: "We will get by… we will survive this load time…", song: "Touch of Grey"),
         // Sugar Magnolia
-        LoadingQuote(lyric: "Sugar Magnolia, streams are loading, apps all empty and I don't care", song: "Sugar Magnolia"),
+        LoadingQuote(lyric: "Sugar Magnolia, streams are loading, apps all empty and I don't care…", song: "Sugar Magnolia"),
         // Uncle John's Band
         LoadingQuote(lyric: "Come hear Uncle John's Band, by the server side…", song: "Uncle John's Band"),
         // The Music Never Stopped
@@ -32,19 +32,27 @@ struct LoadingQuote {
         // Box of Rain
         LoadingQuote(lyric: "Look out of any window, any morning, any evening, any load time…", song: "Box of Rain"),
         // Bertha
-        LoadingQuote(lyric: "I had a hard run, runnin' from your buffer...", song: "Bertha"),
+        LoadingQuote(lyric: "I had a hard run, runnin' from your buffer…", song: "Bertha"),
         // Estimated Prophet
-        LoadingQuote(lyric: "My app loading any day, don't worry 'bout me, no", song: "Estimated Prophet"),
+        LoadingQuote(lyric: "My app loading any day, don't worry 'bout me, no…", song: "Estimated Prophet"),
         // China Cat Sunflower
-        LoadingQuote(lyric: "Load for a while with the China Cat Sunflower", song: "China Cat Sunflower"),
+        LoadingQuote(lyric: "Load for a while with the China Cat Sunflower…", song: "China Cat Sunflower"),
         // Althea
-        LoadingQuote(lyric: "There are things you can replace, and buffers you cannot…", song: "Althea"),
+        LoadingQuote(lyric: "Althea told me, ok that's fine, so now I'm trying to buffer…", song: "Althea"),
         // Deal
         LoadingQuote(lyric: "Don't you let that data go, no, no, no…", song: "Deal"),
         // St. Stephen
-        LoadingQuote(lyric: "St. Stephen with a rose, in and out of the app he loads", song: "St. Stephen"),
+        LoadingQuote(lyric: "St. Stephen with a rose, in and out of the app he loads…", song: "St. Stephen"),
         // Not Fade Away
-        LoadingQuote(lyric: "You know my load will not fade away...", song: "Not Fade Away"),
+        LoadingQuote(lyric: "You know my load will not fade away…", song: "Not Fade Away"),
+        // Shakedown Street
+        LoadingQuote(lyric: "Just gotta load around…", song: "Shakedown Street"),
+        // Donna
+        LoadingQuote(lyric: "WOOOAAAHHHYEEEAAAAAAHHHH…", song: "Donna"),
+        // Playing in the Band
+        LoadingQuote(lyric: "Loading, loading in the app…", song: "Playing in the Band"),
+        // New Speedway Boogie
+        LoadingQuote(lyric: "If the horse don't pull you've got to carry the load…", song: "New Speedway Boogie"),
     ]
 
     static func random() -> LoadingQuote {
@@ -67,25 +75,30 @@ struct LoadingQuoteView: View {
 
     var body: some View {
         VStack(spacing: DeadTheme.Spacing.md) {
+            Spacer()
+            
             // Animated dots
             LoadingDots()
 
             // Quote
             VStack(spacing: DeadTheme.Spacing.xs) {
                 Text("\"" + quote.lyric + "\"")
-                    .font(DeadTheme.Typography.headline())
+                    .font(DeadTheme.Typography.title2())
                     .foregroundStyle(DeadTheme.Colors.textPrimary)
                     .multilineTextAlignment(.center)
                     .italic()
-                    .lineLimit(3)
+                    .lineLimit(4)
 
                 Text("— \(quote.song)")
-                    .font(DeadTheme.Typography.monoSmall())
+                    .font(DeadTheme.Typography.mono())
                     .foregroundStyle(DeadTheme.Colors.textTertiary)
             }
             .opacity(opacity)
             .padding(.horizontal, DeadTheme.Spacing.xl)
+            
+            Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear {
             withAnimation(.easeIn(duration: 0.6)) {
                 opacity = 1
