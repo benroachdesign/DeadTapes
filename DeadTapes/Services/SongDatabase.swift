@@ -398,6 +398,60 @@ class SongDatabase {
               "gd1983-10-17.mtx.seamons.fix2.92424.sbeok.flac16",
               "gd1977-06-09.28614.sbeok.flac16"
             ]
+          },
+          {
+            "id": "me-and-my-uncle",
+            "title": "Me and My Uncle",
+            "playCount": 916,
+            "originalArtist": "John Phillips",
+            "debutYear": 1966,
+            "shows": [
+              "gd90-07-23.sbd.oconner.7612.sbeok.shnf",
+              "gd77-05-05.sbd.stephens.8832.sbeok.shnf",
+              "gd73-02-09.sbd.bertha-fink.14939.sbeok.shnf",
+              "gd74-05-19.sbd.clugston.6957.sbeok.shnf",
+              "gd78-01-22.sbd.popi.4974.sbeok.shnf"
+            ]
+          },
+          {
+            "id": "sugar-magnolia",
+            "title": "Sugar Magnolia",
+            "playCount": 596,
+            "originalArtist": "Grateful Dead",
+            "debutYear": 1970,
+            "shows": [
+              "gd1970-11-08.aud.weiner.28609.sbeok.shnf",
+              "gd77-02-26.sbd.alphadog.9752.sbeok.shnf",
+              "gd74-05-19.sbd.clugston.6957.sbeok.shnf",
+              "gd87-04-03.sennme80.clark-miller.24898.sbeok.shnf",
+              "gd1977-06-09.28614.sbeok.flac16"
+            ]
+          },
+          {
+            "id": "around-and-around",
+            "title": "Around and Around",
+            "playCount": 414,
+            "originalArtist": "Chuck Berry",
+            "debutYear": 1970,
+            "shows": [
+              "gd78-01-22.sbd.popi.4974.sbeok.shnf",
+              "gd_nrps70-05-15.sbd.reynolds-kaplan.29473.shnf",
+              "gd75-08-13.fm.vernon.23661.sbeok.shnf",
+              "gd95-07-09.sbd.7233.sbeok.shnf"
+            ]
+          },
+          {
+            "id": "good-lovin",
+            "title": "Good Lovin'",
+            "playCount": 406,
+            "originalArtist": "The Olympics / The Rascals",
+            "debutYear": 1969,
+            "shows": [
+              "gd1977-05-08.shure57.stevenson.29303.flac16",
+              "gd77-05-08.sbd.hicks.4982.sbeok.shnf",
+              "gd89-07-07.aud.wiley.7855.sbeok.shnf",
+              "gd87-09-18.sbd.samaritano.20025.sbeok.shnf"
+            ]
           }
         ]
         """
