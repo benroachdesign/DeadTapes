@@ -13,18 +13,16 @@ struct LoadingQuote {
         LoadingQuote(lyric: "Jack Straw from Wichita, cut his load time down…", song: "Jack Straw"),
         // Truckin'
         LoadingQuote(lyric: "Loadin'… I got my chips cashed in…", song: "Truckin'"),
-        // Scarlet Begonias
-        LoadingQuote(lyric: "Once in a while you get shown the data, that really makes it worth the wait…", song: "Scarlet Begonias"),
         // Casey Jones
         LoadingQuote(lyric: "Drivin' that train, high on buffering…", song: "Casey Jones"),
         // Friend of the Devil
-        LoadingQuote(lyric: "I set out loading, never did load fast…", song: "Friend of the Devil"),
+        LoadingQuote(lyric: "I set out loading, I was trailed by twenty GB...", song: "Friend of the Devil"),
         // Fire on the Mountain
-        LoadingQuote(lyric: "Long distance loading, the connection is alive…", song: "Fire on the Mountain"),
+        LoadingQuote(lyric: "Long distance loader, what you standing there for?", song: "Fire on the Mountain"),
         // Touch of Grey
         LoadingQuote(lyric: "We will get by… we will survive this load time…", song: "Touch of Grey"),
         // Sugar Magnolia
-        LoadingQuote(lyric: "Sugar Magnolia, streams are loading, loading can't be waiting…", song: "Sugar Magnolia"),
+        LoadingQuote(lyric: "Sugar Magnolia, streams are loading, apps all empty and I don't care", song: "Sugar Magnolia"),
         // Uncle John's Band
         LoadingQuote(lyric: "Come hear Uncle John's Band, by the server side…", song: "Uncle John's Band"),
         // The Music Never Stopped
@@ -34,19 +32,19 @@ struct LoadingQuote {
         // Box of Rain
         LoadingQuote(lyric: "Look out of any window, any morning, any evening, any load time…", song: "Box of Rain"),
         // Bertha
-        LoadingQuote(lyric: "I had a hard load, living with the status bar…", song: "Bertha"),
+        LoadingQuote(lyric: "I had a hard run, runnin' from your buffer...", song: "Bertha"),
         // Estimated Prophet
-        LoadingQuote(lyric: "My time loading, is yet to come…", song: "Estimated Prophet"),
+        LoadingQuote(lyric: "My app loading any day, don't worry 'bout me, no", song: "Estimated Prophet"),
         // China Cat Sunflower
-        LoadingQuote(lyric: "Look for a while at the China Cat Sunflower, proudly loading…", song: "China Cat Sunflower"),
+        LoadingQuote(lyric: "Load for a while with the China Cat Sunflower", song: "China Cat Sunflower"),
         // Althea
         LoadingQuote(lyric: "There are things you can replace, and buffers you cannot…", song: "Althea"),
         // Deal
         LoadingQuote(lyric: "Don't you let that data go, no, no, no…", song: "Deal"),
         // St. Stephen
-        LoadingQuote(lyric: "One server to load them all…", song: "St. Stephen"),
+        LoadingQuote(lyric: "St. Stephen with a rose, in and out of the app he loads", song: "St. Stephen"),
         // Not Fade Away
-        LoadingQuote(lyric: "Our load time is not fading away…", song: "Not Fade Away"),
+        LoadingQuote(lyric: "You know my load will not fade away...", song: "Not Fade Away"),
     ]
 
     static func random() -> LoadingQuote {
