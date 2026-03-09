@@ -16,17 +16,23 @@ struct ContentView: View {
                     }
                     .tag(0)
 
+                SongListView()
+                    .tabItem {
+                        Label("Songs", systemImage: "music.mic")
+                    }
+                    .tag(1)
+
                 ShowBrowserView()
                     .tabItem {
                         Label("Browse", systemImage: "music.note.list")
                     }
-                    .tag(1)
+                    .tag(2)
 
                 LibraryView()
                     .tabItem {
                         Label("Library", systemImage: "heart.fill")
                     }
-                    .tag(2)
+                    .tag(3)
             }
             .tint(DeadTheme.Colors.accent)
 

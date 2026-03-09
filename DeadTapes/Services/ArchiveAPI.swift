@@ -126,6 +126,25 @@ actor ArchiveAPI {
         return response.response.docs.compactMap { $0.toShow() }
     }
 
+    // MARK: - Metadata Fetching
+    
+    func fetchShowMetadataOnly(identifier: String) async throws -> Show? {
+        let fields = [
+            "identifier", "title", "date", "avg_rating",
+            "num_reviews", "downloads", "source", "venue", "coverage"
+        ]
+        let fieldParams = fields.map { "fl[]=\($0)" }.joined(separator: "&")
+        
+        let query = "identifier:\(identifier)"
+        let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
+        
+        let urlString = "\(baseSearchURL)?q=\(encodedQuery)&\(fieldParams)&output=json&rows=1"
+        
+        let data = try await fetchData(urlString: urlString)
+        let response = try JSONDecoder().decode(ArchiveSearchResponse.self, from: data)
+        return response.response.docs.compactMap { $0.toShow() }.first
+    }
+
     // MARK: - Fetch Track Listing
 
     func fetchTracks(for identifier: String) async throws -> [Track] {
