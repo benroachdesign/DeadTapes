@@ -1,4 +1,4 @@
-# DeadTapes 🎶
+# LiveVault 🎶
 
 A high-fidelity iOS app for streaming Grateful Dead concerts from the [Internet Archive](https://archive.org).
 
