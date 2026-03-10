@@ -18,9 +18,6 @@ final class PlayerViewModel {
     }
 
     func presentFullScreen() {
-        withObservationTracking {
-            _ = isFullScreenPresented
-        } onChange: { }
         isFullScreenPresented = true
     }
 

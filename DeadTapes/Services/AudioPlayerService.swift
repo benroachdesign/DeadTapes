@@ -114,12 +114,12 @@ final class AudioPlayerService {
             return
         }
 
-        guard currentIndex > 0 else { return }
+        guard currentIndex > 0, let show = currentShow else { return }
 
         // Need to rebuild queue from previous track
         currentIndex -= 1
         let track = queue[currentIndex]
-        play(track: track, in: queue, show: currentShow!)
+        play(track: track, in: queue, show: show)
     }
 
     func seek(to time: TimeInterval) {
@@ -200,10 +200,8 @@ final class AudioPlayerService {
             guard let self = self,
                   let endedItem = notification.object as? AVPlayerItem else { return }
 
-            // Only advance if this was the current item
-            if endedItem == self.player?.currentItem {
-                return // AVQueuePlayer handles advancement
-            }
+            // Only advance index when the current item finishes
+            guard endedItem == self.player?.currentItem else { return }
 
             self.currentIndex += 1
             if self.currentIndex < self.queue.count {

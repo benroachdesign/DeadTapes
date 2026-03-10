@@ -29,21 +29,15 @@ struct Show: Identifiable, Codable, Hashable {
     }
 
     var formattedDate: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/yyyy"
-        return formatter.string(from: date)
+        Show.formattedDateFormatter.string(from: date)
     }
 
     var shortDate: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "M/d/yy"
-        return formatter.string(from: date)
+        Show.shortDateFormatter.string(from: date)
     }
 
     var yearString: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy"
-        return formatter.string(from: date)
+        Show.yearFormatter.string(from: date)
     }
 
     var year: Int {
@@ -63,6 +57,26 @@ struct Show: Identifiable, Codable, Hashable {
         guard let rating = avgRating else { return 0 }
         return Int(rating.rounded())
     }
+
+    // MARK: - Static Formatters (created once, reused across all Show instances)
+
+    private static let formattedDateFormatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateFormat = "MM/dd/yyyy"
+        return f
+    }()
+
+    private static let shortDateFormatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateFormat = "M/d/yy"
+        return f
+    }()
+
+    private static let yearFormatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateFormat = "yyyy"
+        return f
+    }()
 }
 
 // MARK: - API Response Wrappers
