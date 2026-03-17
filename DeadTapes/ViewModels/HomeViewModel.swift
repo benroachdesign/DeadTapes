@@ -35,7 +35,7 @@ final class HomeViewModel {
     // MARK: - Load Today in History
 
     func loadTodayInHistory() async {
-        guard !isLoading else { return }
+        guard todayShows.isEmpty, !isLoading else { return }
         isLoading = true
         errorMessage = nil
 
@@ -60,6 +60,7 @@ final class HomeViewModel {
     // MARK: - Load Trending Show (most downloaded this week)
 
     func loadTrendingShow() async {
+        guard trendingShow == nil else { return }
         do {
             let shows = try await ArchiveAPI.shared.fetchTrending(rows: 1)
             await MainActor.run {

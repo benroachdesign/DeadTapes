@@ -52,15 +52,11 @@ struct HomeView: View {
             }
             .navigationBarHidden(true)
             .task {
-                if viewModel.todayShows.isEmpty {
-                    await viewModel.loadTodayInHistory()
-                    withAnimation(DeadTheme.Animation.smooth) {
-                        showAppeared = true
-                    }
-                }
-                if viewModel.trendingShow == nil {
-                    await viewModel.loadTrendingShow()
-                }
+                async let todayLoad: Void = viewModel.loadTodayInHistory()
+                async let trendingLoad: Void = viewModel.loadTrendingShow()
+                await todayLoad
+                withAnimation(DeadTheme.Animation.smooth) { showAppeared = true }
+                await trendingLoad
             }
         }
     }
