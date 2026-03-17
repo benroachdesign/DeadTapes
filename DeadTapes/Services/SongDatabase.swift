@@ -1,5 +1,8 @@
 import Foundation
 
+/// Singleton providing the static Grateful Dead song catalog.
+/// Intentionally a plain class (not `@Observable`) because the data is loaded once
+/// from `songs_db.json` at init time and never mutates at runtime.
 class SongDatabase {
     static let shared = SongDatabase()
     

@@ -52,7 +52,6 @@ struct ContentView: View {
         .animation(DeadTheme.Animation.springy, value: audioPlayer.currentTrack != nil)
         .onAppear {
             setupTabBarAppearance()
-            playerViewModel.bind(to: audioPlayer)
         }
     }
 

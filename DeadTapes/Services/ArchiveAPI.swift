@@ -128,6 +128,8 @@ actor ArchiveAPI {
 
     // MARK: - Networking
 
+    private let maxCacheEntries = 100
+
     private func fetchData(urlString: String) async throws -> Data {
         // Check cache
         if let cached = cache[urlString],
@@ -144,6 +146,15 @@ actor ArchiveAPI {
         guard let httpResponse = response as? HTTPURLResponse,
               (200...299).contains(httpResponse.statusCode) else {
             throw APIError.serverError
+        }
+
+        // Evict oldest entries if cache is full
+        if cache.count >= maxCacheEntries {
+            let sortedKeys = cache.sorted { $0.value.timestamp < $1.value.timestamp }
+            let keysToRemove = sortedKeys.prefix(cache.count - maxCacheEntries + 1)
+            for (key, _) in keysToRemove {
+                cache.removeValue(forKey: key)
+            }
         }
 
         // Store in cache

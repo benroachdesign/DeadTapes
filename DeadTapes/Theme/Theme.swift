@@ -165,25 +165,30 @@ enum DeadTheme {
 
     // MARK: Era Palette
 
-    static func eraGradient(for year: Int) -> LinearGradient {
+    /// Single source of truth for era-based color arrays.
+    /// Used by `eraGradient(for:)` and `NowPlayingFullView` background.
+    static func eraColors(for year: Int) -> [Color] {
         switch year {
         case ...1969:
-            return LinearGradient(
-                colors: [Color(hex: "DC2626"), Color(hex: "F97316"), Color(hex: "FBBF24")],
-                startPoint: .topLeading, endPoint: .bottomTrailing
-            )
+            return [Color(hex: "DC2626"), Color(hex: "F97316"), Color(hex: "FBBF24")]
         case 1970...1974:
-            return Gradients.seventies
+            return [Color(hex: "B45309"), Color(hex: "D97706"), Color(hex: "92400E")]
         case 1975...1979:
-            return LinearGradient(
-                colors: [Color(hex: "D97706"), Color(hex: "B45309"), Color(hex: "78350F")],
-                startPoint: .topLeading, endPoint: .bottomTrailing
-            )
+            return [Color(hex: "D97706"), Color(hex: "B45309"), Color(hex: "78350F")]
         case 1980...1989:
-            return Gradients.eighties
+            return [Color(hex: "7C3AED"), Color(hex: "EC4899"), Color(hex: "06B6D4")]
         default:
-            return Gradients.psychedelic
+            return [Colors.psychPurple, Colors.psychPink, Colors.psychOrange]
         }
+    }
+
+    /// Era-appropriate gradient for text/badges.
+    static func eraGradient(for year: Int) -> LinearGradient {
+        LinearGradient(
+            colors: eraColors(for: year),
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
     }
 }
 

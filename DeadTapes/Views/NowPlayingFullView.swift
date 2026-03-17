@@ -71,43 +71,11 @@ struct NowPlayingFullView: View {
 
     private var eraColors: [Color] {
         let year = audioPlayer.currentShow?.year ?? 1977
-        switch year {
-        case ...1969:
-            return [
-                Color(hex: "DC2626").opacity(0.4),
-                Color(hex: "F97316").opacity(0.3),
-                Color(hex: "FBBF24").opacity(0.2),
-                DeadTheme.Colors.background
-            ]
-        case 1970...1974:
-            return [
-                Color(hex: "B45309").opacity(0.4),
-                Color(hex: "D97706").opacity(0.3),
-                Color(hex: "92400E").opacity(0.25),
-                DeadTheme.Colors.background
-            ]
-        case 1975...1979:
-            return [
-                Color(hex: "D97706").opacity(0.35),
-                Color(hex: "78350F").opacity(0.3),
-                Color(hex: "B45309").opacity(0.25),
-                DeadTheme.Colors.background
-            ]
-        case 1980...1989:
-            return [
-                Color(hex: "7C3AED").opacity(0.4),
-                Color(hex: "EC4899").opacity(0.3),
-                Color(hex: "06B6D4").opacity(0.2),
-                DeadTheme.Colors.background
-            ]
-        default:
-            return [
-                DeadTheme.Colors.psychPurple.opacity(0.3),
-                DeadTheme.Colors.psychPink.opacity(0.2),
-                DeadTheme.Colors.psychBlue.opacity(0.25),
-                DeadTheme.Colors.background
-            ]
-        }
+        let baseColors = DeadTheme.eraColors(for: year)
+        // Apply opacity for background use, append background as anchor
+        return baseColors.enumerated().map { i, c in
+            c.opacity(i == 0 ? 0.4 : i == 1 ? 0.3 : 0.2)
+        } + [DeadTheme.Colors.background]
     }
 
     // MARK: - Drag Handle

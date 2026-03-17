@@ -1,21 +1,12 @@
 import Foundation
 import Observation
 
+/// Manages player UI presentation state (full-screen/queue visibility).
+/// Intentionally thin — playback logic lives in `AudioPlayerService`.
 @Observable
 final class PlayerViewModel {
     var isFullScreenPresented = false
     var showQueue = false
-
-    // Computed from AudioPlayerService — bridging for views
-    var hasActiveTrack: Bool {
-        _audioPlayer?.currentTrack != nil
-    }
-
-    private weak var _audioPlayer: AudioPlayerService?
-
-    func bind(to audioPlayer: AudioPlayerService) {
-        _audioPlayer = audioPlayer
-    }
 
     func presentFullScreen() {
         isFullScreenPresented = true
