@@ -27,7 +27,5 @@
 	<array>
 		<string>audio</string>
 	</array>
-	<key>UIRequiresFullScreen</key>
-	<true/>
 </dict>
 </plist>
