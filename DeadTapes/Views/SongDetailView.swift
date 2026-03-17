@@ -4,6 +4,7 @@ struct SongDetailView: View {
     @State var viewModel: SongDetailViewModel
     @Environment(AudioPlayerService.self) private var audioPlayer
     @State private var showNoShowsAlert = false
+    @State private var showFetchErrorAlert = false
     
     var body: some View {
         ZStack {
@@ -53,6 +54,11 @@ struct SongDetailView: View {
                             Button("OK", role: .cancel) {}
                         } message: {
                             Text("No tracked performances found for \(viewModel.song.title).")
+                        }
+                        .alert("Couldn't Load Show", isPresented: $showFetchErrorAlert) {
+                            Button("OK", role: .cancel) {}
+                        } message: {
+                            Text("Unable to load tracks for this performance. Archive.org may be temporarily unavailable — please try again.")
                         }
                     }
                     .padding(.horizontal, DeadTheme.Spacing.lg)
@@ -142,6 +148,9 @@ struct SongDetailView: View {
                 #if DEBUG
                 print("Failed to start random song version: \(error)")
                 #endif
+                await MainActor.run {
+                    showFetchErrorAlert = true
+                }
             }
         }
     }
