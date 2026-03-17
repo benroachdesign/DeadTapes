@@ -14,7 +14,9 @@ class SongDatabase {
     
     private func loadDatabase() {
         guard let url = Bundle.main.url(forResource: "songs_db", withExtension: "json") else {
+            #if DEBUG
             print("Error: songs_db.json not found in bundle")
+            #endif
             return
         }
         
@@ -26,7 +28,9 @@ class SongDatabase {
             // Sort alphabetically by default
             allSongs.sort { $0.title < $1.title }
         } catch {
+            #if DEBUG
             print("Error parsing songs_db.json: \(error)")
+            #endif
         }
     }
     

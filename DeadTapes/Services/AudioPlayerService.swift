@@ -39,7 +39,9 @@ final class AudioPlayerService {
             try session.setCategory(.playback, mode: .default, options: [])
             try session.setActive(true)
         } catch {
+            #if DEBUG
             print("Audio session setup failed: \(error)")
+            #endif
         }
     }
 

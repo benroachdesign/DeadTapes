@@ -139,7 +139,9 @@ struct SongDetailView: View {
                     audioPlayer.play(track: tracks[startIndex], in: tracks, show: randomShow)
                 }
             } catch {
+                #if DEBUG
                 print("Failed to start random song version: \(error)")
+                #endif
             }
         }
     }
