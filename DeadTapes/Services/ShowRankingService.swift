@@ -1,6 +1,7 @@
 import Foundation
 import Observation
 
+@MainActor
 @Observable
 final class ShowRankingService {
     static let shared = ShowRankingService()
@@ -20,12 +21,10 @@ final class ShowRankingService {
                 page: 1,
                 rows: 100
             )
-            await MainActor.run {
-                for (index, show) in shows.enumerated() {
-                    topAllTimeIdentifiers[show.identifier] = index + 1
-                }
-                isLoaded = true
+            for (index, show) in shows.enumerated() {
+                topAllTimeIdentifiers[show.identifier] = index + 1
             }
+            isLoaded = true
         } catch {
             // Silently fail — badges are enhancement, not critical
             print("Failed to load top all-time: \(error)")
