@@ -6,6 +6,15 @@ actor ArchiveAPI {
     private let baseSearchURL = "https://archive.org/advancedsearch.php"
     private let baseMetadataURL = "https://archive.org/metadata"
 
+    // Shared field params for all show search queries
+    private static let defaultFieldParams: String = {
+        let fields = [
+            "identifier", "title", "date", "avg_rating",
+            "num_reviews", "downloads", "source", "venue", "coverage"
+        ]
+        return fields.map { "fl[]=\($0)" }.joined(separator: "&")
+    }()
+
     private let session: URLSession
     private var cache: [String: (data: Data, timestamp: Date)] = [:]
     private let cacheDuration: TimeInterval = 300 // 5 minutes
@@ -20,11 +29,7 @@ actor ArchiveAPI {
     // MARK: - Search Shows by Year
 
      func searchShows(year: Int, page: Int = 1, rows: Int = 50) async throws -> [Show] {
-        let fields = [
-            "identifier", "title", "date", "avg_rating",
-            "num_reviews", "downloads", "source", "venue", "coverage"
-        ]
-        let fieldParams = fields.map { "fl[]=\($0)" }.joined(separator: "&")
+        let fieldParams = Self.defaultFieldParams
 
         let query: String
         if year == 0 {
@@ -45,11 +50,7 @@ actor ArchiveAPI {
     // MARK: - Trending (sorted by weekly downloads)
 
     func fetchTrending(rows: Int = 5) async throws -> [Show] {
-        let fields = [
-            "identifier", "title", "date", "avg_rating",
-            "num_reviews", "downloads", "source", "venue", "coverage"
-        ]
-        let fieldParams = fields.map { "fl[]=\($0)" }.joined(separator: "&")
+        let fieldParams = Self.defaultFieldParams
 
         let query = "collection:GratefulDead"
         let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
@@ -64,34 +65,23 @@ actor ArchiveAPI {
     // MARK: - Today in History
 
     func showsOnThisDay(month: Int, day: Int) async throws -> [Show] {
-        // Query across all GD active years for this month/day
-        // Archive.org doesn't support wildcard month/day, so we search a date range
-        // We'll query each year individually and merge for accuracy
-        let years = Array(1965...1995)
         let paddedMonth = String(format: "%02d", month)
         let paddedDay = String(format: "%02d", day)
 
-        var allShows: [Show] = []
+        // Build a single OR query across all active years
+        let years = Array(1965...1995)
+        let dateQueries = years.map { "date:\($0)-\(paddedMonth)-\(paddedDay)" }
+        let combinedDateQuery = "(\(dateQueries.joined(separator: " OR ")))"
+        let query = "collection:GratefulDead AND \(combinedDateQuery)"
 
-        // Batch queries — 5 at a time to be nice to the API
-        let batchSize = 5
-        for batchStart in stride(from: 0, to: years.count, by: batchSize) {
-            let batchEnd = min(batchStart + batchSize, years.count)
-            let batch = years[batchStart..<batchEnd]
+        let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
+        let fieldParams = Self.defaultFieldParams
 
-            try await withThrowingTaskGroup(of: [Show].self) { group in
-                for year in batch {
-                    group.addTask { [self] in
-                        let dateStr = "\(year)-\(paddedMonth)-\(paddedDay)"
-                        return try await self.searchShowsForDate(dateStr)
-                    }
-                }
+        let urlString = "\(baseSearchURL)?q=\(encodedQuery)&\(fieldParams)&output=json&rows=200&sort[]=downloads+desc"
 
-                for try await shows in group {
-                    allShows.append(contentsOf: shows)
-                }
-            }
-        }
+        let data = try await fetchData(urlString: urlString)
+        let response = try JSONDecoder().decode(ArchiveSearchResponse.self, from: data)
+        let allShows = response.response.docs.compactMap { $0.toShow() }
 
         // Deduplicate by date (keep highest download count per unique date)
         var seen: [String: Show] = [:]
@@ -109,31 +99,10 @@ actor ArchiveAPI {
         return seen.values.sorted { $0.downloads > $1.downloads }
     }
 
-    private func searchShowsForDate(_ dateStr: String) async throws -> [Show] {
-        let fields = [
-            "identifier", "title", "date", "avg_rating",
-            "num_reviews", "downloads", "source", "venue", "coverage"
-        ]
-        let fieldParams = fields.map { "fl[]=\($0)" }.joined(separator: "&")
-
-        let query = "collection:GratefulDead AND date:\(dateStr)"
-        let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
-
-        let urlString = "\(baseSearchURL)?q=\(encodedQuery)&\(fieldParams)&output=json&rows=10&sort[]=downloads+desc"
-
-        let data = try await fetchData(urlString: urlString)
-        let response = try JSONDecoder().decode(ArchiveSearchResponse.self, from: data)
-        return response.response.docs.compactMap { $0.toShow() }
-    }
-
     // MARK: - Metadata Fetching
     
     func fetchShowMetadataOnly(identifier: String) async throws -> Show? {
-        let fields = [
-            "identifier", "title", "date", "avg_rating",
-            "num_reviews", "downloads", "source", "venue", "coverage"
-        ]
-        let fieldParams = fields.map { "fl[]=\($0)" }.joined(separator: "&")
+        let fieldParams = Self.defaultFieldParams
         
         let query = "identifier:\(identifier)"
         let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query

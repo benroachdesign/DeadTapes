@@ -102,25 +102,32 @@ struct ArchiveShowDoc: Codable {
     let downloads: Int?
     let num_reviews: Int?
 
+    // MARK: - Static Formatters (created once, reused across all parsing)
+
+    private static let iso8601Formatter: ISO8601DateFormatter = {
+        let f = ISO8601DateFormatter()
+        f.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        return f
+    }()
+
+    private static let fallbackDateFormatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        f.timeZone = TimeZone(identifier: "UTC")
+        return f
+    }()
+
     func toShow() -> Show? {
         guard let dateStr = date else { return nil }
 
-        let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
         let parsedDate: Date
 
-        if let d = formatter.date(from: dateStr) {
+        if let d = Self.iso8601Formatter.date(from: dateStr) {
+            parsedDate = d
+        } else if let d = Self.fallbackDateFormatter.date(from: dateStr) {
             parsedDate = d
         } else {
-            // Try simpler format
-            let df = DateFormatter()
-            df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-            df.timeZone = TimeZone(identifier: "UTC")
-            if let d = df.date(from: dateStr) {
-                parsedDate = d
-            } else {
-                return nil
-            }
+            return nil
         }
 
         return Show(

@@ -3,6 +3,7 @@ import AVFoundation
 import MediaPlayer
 import Observation
 
+@MainActor
 @Observable
 final class AudioPlayerService {
     // MARK: - State
@@ -180,7 +181,7 @@ final class AudioPlayerService {
             if item.status == .readyToPlay {
                 let dur = CMTimeGetSeconds(item.duration)
                 if dur.isFinite {
-                    Task { @MainActor in
+                    MainActor.assumeIsolated {
                         self.duration = dur
                         self.isLoading = false
                         self.updateNowPlayingInfo()

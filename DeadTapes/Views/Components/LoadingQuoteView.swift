@@ -131,6 +131,7 @@ struct LoadingQuoteView: View {
 
 struct LoadingDots: View {
     @State private var activeDot = 0
+    @State private var dotTimer: Timer?
 
     var body: some View {
         HStack(spacing: 6) {
@@ -147,9 +148,13 @@ struct LoadingDots: View {
             }
         }
         .onAppear {
-            Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
+            dotTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
                 activeDot = (activeDot + 1) % 3
             }
+        }
+        .onDisappear {
+            dotTimer?.invalidate()
+            dotTimer = nil
         }
     }
 }
