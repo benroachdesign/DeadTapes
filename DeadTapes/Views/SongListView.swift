@@ -44,17 +44,51 @@ struct SongListView: View {
                     .padding(.vertical, DeadTheme.Spacing.sm)
                     
                     // List
-                    ScrollView {
-                        LazyVStack(spacing: 0) {
-                            ForEach(viewModel.displayedSongs) { song in
-                                NavigationLink(value: song) {
-                                    SongRow(song: song)
-                                }
-                                .buttonStyle(.plain)
-                            }
+                    if viewModel.displayedSongs.isEmpty && !viewModel.searchText.isEmpty {
+                        // Empty search state
+                        Spacer()
+                        VStack(spacing: DeadTheme.Spacing.md) {
+                            Image(systemName: "music.note.list")
+                                .font(.system(size: 36))
+                                .foregroundStyle(DeadTheme.Colors.textTertiary)
+
+                            Text("No songs found for \"\(viewModel.searchText)\"")
+                                .font(DeadTheme.Typography.headline())
+                                .foregroundStyle(DeadTheme.Colors.textSecondary)
+
+                            Text("Our catalog covers the most popular songs in the Dead's repertoire. Rare deep cuts and one-off covers may not be listed yet.")
+                                .font(DeadTheme.Typography.caption())
+                                .foregroundStyle(DeadTheme.Colors.textTertiary)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal, DeadTheme.Spacing.xl)
                         }
-                        .padding(.top, DeadTheme.Spacing.sm)
-                        .padding(.bottom, 100) // Space for mini player
+                        .padding(.top, DeadTheme.Spacing.hero)
+                        Spacer()
+                    } else {
+                        ScrollView {
+                            LazyVStack(spacing: 0) {
+                                ForEach(viewModel.displayedSongs) { song in
+                                    NavigationLink(value: song) {
+                                        SongRow(song: song)
+                                    }
+                                    .buttonStyle(.plain)
+                                }
+
+                                // Footer note
+                                HStack(spacing: DeadTheme.Spacing.xs) {
+                                    Image(systemName: "music.note")
+                                        .font(.system(size: 11))
+                                    Text("This catalog features the Dead's most-played songs. Not every tune from every setlist is here.")
+                                        .font(DeadTheme.Typography.caption())
+                                }
+                                .foregroundStyle(DeadTheme.Colors.textTertiary)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal, DeadTheme.Spacing.xl)
+                                .padding(.top, DeadTheme.Spacing.xl)
+                            }
+                            .padding(.top, DeadTheme.Spacing.sm)
+                            .padding(.bottom, 100) // Space for mini player
+                        }
                     }
                 }
             }
