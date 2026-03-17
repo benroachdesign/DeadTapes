@@ -177,10 +177,10 @@ final class AudioPlayerService {
             if item.status == .readyToPlay {
                 let dur = CMTimeGetSeconds(item.duration)
                 if dur.isFinite {
-                    MainActor.assumeIsolated {
-                        self.duration = dur
-                        self.isLoading = false
-                        self.updateNowPlayingInfo()
+                    Task { @MainActor [weak self] in
+                        self?.duration = dur
+                        self?.isLoading = false
+                        self?.updateNowPlayingInfo()
                     }
                 }
             }
