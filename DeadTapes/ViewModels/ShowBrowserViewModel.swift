@@ -15,6 +15,7 @@ final class ShowBrowserViewModel {
     let years = Array(1965...1995)
 
     private let rankingService = ShowRankingService.shared
+    private var loadTask: Task<Void, Never>?
 
     var showCount: Int { filteredShows.count }
 
@@ -45,6 +46,8 @@ final class ShowBrowserViewModel {
                 self.filterShows()
                 self.isLoading = false
             }
+        } catch is CancellationError {
+            isLoading = false
         } catch {
             await MainActor.run {
                 self.errorMessage = error.localizedDescription
@@ -54,10 +57,11 @@ final class ShowBrowserViewModel {
     }
 
     func selectYear(_ year: Int) {
+        loadTask?.cancel()
         selectedYear = year
         shows = []
         filteredShows = []
-        Task {
+        loadTask = Task {
             await loadShows()
         }
     }

@@ -27,6 +27,8 @@ final class ShowDetailViewModel {
                 self.groupTracksBySets(tracks)
                 self.isLoading = false
             }
+        } catch is CancellationError {
+            isLoading = false
         } catch {
             await MainActor.run {
                 self.errorMessage = error.localizedDescription

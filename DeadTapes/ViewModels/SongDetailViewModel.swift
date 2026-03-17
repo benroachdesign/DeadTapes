@@ -51,6 +51,8 @@ class SongDetailViewModel {
                 self.recentShows = fetchedShows
                 self.isLoading = false
             }
+        } catch is CancellationError {
+            isLoading = false
         } catch {
             await MainActor.run {
                 self.errorMessage = error.localizedDescription
