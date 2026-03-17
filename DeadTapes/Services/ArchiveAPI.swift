@@ -68,11 +68,11 @@ actor ArchiveAPI {
         let paddedMonth = String(format: "%02d", month)
         let paddedDay = String(format: "%02d", day)
 
-        // Build a single OR query across all active years
-        let years = Array(1965...1995)
-        let dateQueries = years.map { "date:\($0)-\(paddedMonth)-\(paddedDay)" }
-        let combinedDateQuery = "(\(dateQueries.joined(separator: " OR ")))"
-        let query = "collection:GratefulDead AND \(combinedDateQuery)"
+        // Single wildcard query: ???? matches any 4-digit year.
+        // Replaces the previous 31-clause OR across 1965-1995, which produced
+        // ~1200-character URLs. Archive.org's Solr indexes `date` as a string
+        // field so per-character wildcards are supported.
+        let query = "collection:GratefulDead AND date:????-\(paddedMonth)-\(paddedDay)"
 
         let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
         let fieldParams = Self.defaultFieldParams
