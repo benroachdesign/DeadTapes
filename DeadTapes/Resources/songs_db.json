@@ -7,9 +7,9 @@
     "debutYear": 1974,
     "shows": [
       "gd1977-05-08.111493.mtx.seamons.sbeok.flac16",
-      "gd1978-04-16.sbd.miller.97746.sbeok.flac16",
-      "gd1989-12-31.139967.sbd.miller.flac2448",
-      "gd1974-06-23.sbd.miller.110515.flac16"
+      "gd1978-04-16.sbd.cantor.motb.81457.sbeok.flac16",
+      "gd89-12-31.sbd.bertha-ashley.18674.sbeok.shnf",
+      "gd74-06-23.sbd.cribbs.16780.sbeok.shnf"
     ]
   },
   {
@@ -20,8 +20,8 @@
     "debutYear": 1977,
     "shows": [
       "gd1977-05-08.111493.mtx.seamons.sbeok.flac16",
-      "gd1978-04-16.sbd.miller.97746.sbeok.flac16",
-      "gd1989-12-31.139967.sbd.miller.flac2448"
+      "gd1978-04-16.sbd.cantor.motb.81457.sbeok.flac16",
+      "gd89-12-31.sbd.bertha-ashley.18674.sbeok.shnf"
     ]
   },
   {
@@ -32,10 +32,10 @@
     "debutYear": 1967,
     "shows": [
       "gd69-02-27.sbd.16track.kaplan.6315.sbeok.shnf",
-      "gd1969-11-08.sbd.wise.174.sbeok.shnf",
-      "gd70-02-13.sbd.hollister.174.sbeok.shnf",
-      "gd1972-04-08.sbd.miller.81882.sbeok.flac16",
-      "gd1989-10-09.sbd.walker-scotton.miller.81308.sbeok.flac16"
+      "gd1969-11-08.sbd.wise.17433.shnf",
+      "gd1970-02-13.sbd.miller.fix-97613.97639.sbeok.flac16",
+      "gd72-04-08.sbd.giles-jeffm.2534.sbeok.shnf",
+      "gd89-10-09.sbd.serafin.7721.sbeok.shnf"
     ]
   },
   {
@@ -46,8 +46,8 @@
     "debutYear": 1967,
     "shows": [
       "gd1977-05-08.111493.mtx.seamons.sbeok.flac16",
-      "gd1972-05-26.sbd.miller.93041.sbeok.flac16",
-      "gd1974-10-18.sbd.miller.110006.flac16"
+      "gd72-05-26.sbd.hollister.12758.sbeok.shnf",
+      "gd74-10-18.sbd.bertha-ashley.22796.sbeok.shnf"
     ]
   },
   {
@@ -57,9 +57,9 @@
     "originalArtist": "Bob Weir",
     "debutYear": 1971,
     "shows": [
-      "gd1972-08-27.sbd.miller.72008.sbeok.flac16",
-      "gd1974-05-19.sbd.miller.110515.flac16",
-      "gd1972-11-18.sbd.miller.110006.flac16"
+      "gd72-08-27.sbd.orf.3328.sbeok.shnf",
+      "gd74-05-19.sbd.clugston.6957.sbeok.shnf",
+      "gd72-11-18.set2-sbd.cotsman.9002.sbeok.shnf"
     ]
   },
   {
@@ -69,9 +69,9 @@
     "originalArtist": "Grateful Dead",
     "debutYear": 1967,
     "shows": [
-      "gd1972-05-26.sbd.miller.93041.sbeok.flac16",
+      "gd72-05-26.sbd.hollister.12758.sbeok.shnf",
       "gd69-02-27.sbd.16track.kaplan.6315.sbeok.shnf",
-      "gd1970-05-02.sbd.miller.73350.sbeok.flac16"
+      "gd1970-05-02.138227.sbd.miller.flac1648"
     ]
   },
   {
@@ -81,9 +81,9 @@
     "originalArtist": "Grateful Dead",
     "debutYear": 1973,
     "shows": [
-      "gd1973-11-11.sbd.miller.79996.sbeok.flac16",
-      "gd1974-08-06.sbd.miller.110006.flac16",
-      "gd1990-03-29.sbd.miller.92800.sbeok.flac16"
+      "gd73-11-11.sbd.schlissel.14105.sbeok.shnf",
+      "gd74-08-06.merin.weiner.gdADT.5914.sbefail.shnf",
+      "gd90-03-29.aud-fob.set2.unknown.1317.sbeok.shnf"
     ]
   },
   {
@@ -94,8 +94,8 @@
     "debutYear": 1969,
     "shows": [
       "gd1977-05-08.111493.mtx.seamons.sbeok.flac16",
-      "gd1971-11-15.sbd.miller.97746.sbeok.flac16",
-      "gd1989-07-04.139967.sbd.miller.flac2448"
+      "gd71-11-15.sbd.cotsman.12438.sbeok.shnf",
+      "gd89-07-04.aud.wiley.9045.sbeok.shnf"
     ]
   },
   {
@@ -107,7 +107,7 @@
     "shows": [
       "gd1977-05-08.111493.mtx.seamons.sbeok.flac16",
       "gd69-02-27.sbd.16track.kaplan.6315.sbeok.shnf",
-      "gd1970-05-15.sbd.miller.73350.sbeok.flac16"
+      "gd70-05-15.early-late.sbd.97.sbeok.shnf"
     ]
   },
   {
@@ -117,9 +117,9 @@
     "originalArtist": "Grateful Dead",
     "debutYear": 1977,
     "shows": [
-      "gd1977-02-26.sbd.miller.72008.sbeok.flac16",
-      "gd1977-05-28.sbd.miller.110006.flac16",
-      "gd1990-03-15.sbd.miller.92800.sbeok.flac16"
+      "gd77-02-26.sbd.alphadog.9752.sbeok.shnf",
+      "gd77-05-28.sbd.sacks.4983.sbefail.shnf",
+      "gd1990-03-15.28293.sbeok.shnf"
     ]
   },
   {
@@ -129,9 +129,9 @@
     "originalArtist": "Jerry Garcia",
     "debutYear": 1971,
     "shows": [
-      "gd1977-05-28.sbd.miller.110006.flac16",
-      "gd1974-05-19.sbd.miller.110515.flac16",
-      "gd1980-05-15.sbd.miller.73350.sbeok.flac16"
+      "gd77-05-28.sbd.sacks.4983.sbefail.shnf",
+      "gd74-05-19.sbd.clugston.6957.sbeok.shnf",
+      "gd1980-05-15.126692.mtx.dusborne.flac16"
     ]
   },
   {
@@ -141,9 +141,9 @@
     "originalArtist": "Grateful Dead",
     "debutYear": 1968,
     "shows": [
-      "gd1972-08-27.sbd.miller.72008.sbeok.flac16",
-      "gd1974-06-26.sbd.miller.110006.flac16",
-      "gd1990-03-22.sbd.miller.92800.sbeok.flac16"
+      "gd72-08-27.sbd.orf.3328.sbeok.shnf",
+      "gd1974-06-26.140081.sbd.miller.patched.flac1644",
+      "gd1990-03-22.sbd.miller.107871.flac16"
     ]
   },
   {
@@ -165,9 +165,9 @@
     "originalArtist": "Grateful Dead",
     "debutYear": 1978,
     "shows": [
-      "gd1984-12-31.sbd.walker-scotton.miller.81308.sbeok.flac16",
-      "gd1979-11-25.sbd.miller.97746.sbeok.flac16",
-      "gd1981-05-16.sbd.miller.110515.flac16"
+      "gd84-12-31.sbd.gorinsky.6395.sbeok.shnf",
+      "gd79-11-25.sbd.miller.25609.sbeok.shnf",
+      "gd81-05-16.nak300-dmow.28007.sbeok.flacf"
     ]
   },
   {
@@ -177,9 +177,9 @@
     "originalArtist": "Grateful Dead",
     "debutYear": 1979,
     "shows": [
-      "gd1980-05-15.sbd.miller.73350.sbeok.flac16",
-      "gd1981-05-16.sbd.miller.110515.flac16",
-      "gd1990-03-15.sbd.miller.92800.sbeok.flac16"
+      "gd1980-05-15.126692.mtx.dusborne.flac16",
+      "gd81-05-16.nak300-dmow.28007.sbeok.flacf",
+      "gd1990-03-15.28293.sbeok.shnf"
     ]
   },
   {
@@ -189,9 +189,9 @@
     "originalArtist": "Grateful Dead",
     "debutYear": 1975,
     "shows": [
-      "gd1975-08-13.sbd.hollister.174.sbeok.shnf",
-      "gd1977-05-09.sbd.miller.73350.sbeok.flac16",
-      "gd1989-10-09.sbd.walker-scotton.miller.81308.sbeok.flac16"
+      "gd75-08-13.fm.vernon.23661.sbeok.shnf",
+      "gd77-05-09.sbd.connor.8304.sbeok.shnf",
+      "gd89-10-09.sbd.serafin.7721.sbeok.shnf"
     ]
   },
   {
@@ -201,9 +201,9 @@
     "originalArtist": "Grateful Dead",
     "debutYear": 1975,
     "shows": [
-      "gd1975-08-13.sbd.hollister.174.sbeok.shnf",
-      "gd1977-05-09.sbd.miller.73350.sbeok.flac16",
-      "gd1989-10-09.sbd.walker-scotton.miller.81308.sbeok.flac16"
+      "gd75-08-13.fm.vernon.23661.sbeok.shnf",
+      "gd77-05-09.sbd.connor.8304.sbeok.shnf",
+      "gd89-10-09.sbd.serafin.7721.sbeok.shnf"
     ]
   },
   {
@@ -213,9 +213,9 @@
     "originalArtist": "Grateful Dead",
     "debutYear": 1974,
     "shows": [
-      "gd1975-08-13.sbd.hollister.174.sbeok.shnf",
-      "gd1977-05-09.sbd.miller.73350.sbeok.flac16",
-      "gd1989-10-09.sbd.walker-scotton.miller.81308.sbeok.flac16"
+      "gd75-08-13.fm.vernon.23661.sbeok.shnf",
+      "gd77-05-09.sbd.connor.8304.sbeok.shnf",
+      "gd89-10-09.sbd.serafin.7721.sbeok.shnf"
     ]
   },
   {
@@ -225,9 +225,9 @@
     "originalArtist": "Grateful Dead",
     "debutYear": 1970,
     "shows": [
-      "gd1972-05-26.sbd.miller.93041.sbeok.flac16",
-      "gd1974-05-19.sbd.miller.110515.flac16",
-      "gd1989-12-31.139967.sbd.miller.flac2448"
+      "gd72-05-26.sbd.hollister.12758.sbeok.shnf",
+      "gd74-05-19.sbd.clugston.6957.sbeok.shnf",
+      "gd89-12-31.sbd.bertha-ashley.18674.sbeok.shnf"
     ]
   },
   {
@@ -237,9 +237,9 @@
     "originalArtist": "Grateful Dead",
     "debutYear": 1969,
     "shows": [
-      "gd1970-05-15.sbd.miller.73350.sbeok.flac16",
-      "gd1974-06-26.sbd.miller.110006.flac16",
-      "gd1977-12-29.sbd.miller.73350.sbeok.flac16"
+      "gd70-05-15.early-late.sbd.97.sbeok.shnf",
+      "gd1974-06-26.140081.sbd.miller.patched.flac1644",
+      "gd1977-12-29.holwein.audience.jfishman.108432.flac16"
     ]
   },
   {
@@ -249,9 +249,9 @@
     "originalArtist": "Grateful Dead",
     "debutYear": 1971,
     "shows": [
-      "gd1971-02-18.sbd.miller.97746.sbeok.flac16",
-      "gd1977-05-28.sbd.miller.110006.flac16",
-      "gd1989-07-04.139967.sbd.miller.flac2448"
+      "gd71-02-18.sbd.orf.107.sbeok.shnf",
+      "gd77-05-28.sbd.sacks.4983.sbefail.shnf",
+      "gd89-07-04.aud.wiley.9045.sbeok.shnf"
     ]
   },
   {
@@ -261,9 +261,9 @@
     "originalArtist": "Jerry Garcia",
     "debutYear": 1971,
     "shows": [
-      "gd1972-08-27.sbd.miller.72008.sbeok.flac16",
-      "gd1973-11-11.sbd.miller.79996.sbeok.flac16",
-      "gd1990-03-29.sbd.miller.92800.sbeok.flac16"
+      "gd72-08-27.sbd.orf.3328.sbeok.shnf",
+      "gd73-11-11.sbd.schlissel.14105.sbeok.shnf",
+      "gd90-03-29.aud-fob.set2.unknown.1317.sbeok.shnf"
     ]
   },
   {
@@ -273,9 +273,9 @@
     "originalArtist": "Bob Weir",
     "debutYear": 1974,
     "shows": [
-      "gd1977-05-09.sbd.miller.73350.sbeok.flac16",
-      "gd1980-05-15.sbd.miller.73350.sbeok.flac16",
-      "gd1990-03-22.sbd.miller.92800.sbeok.flac16"
+      "gd77-05-09.sbd.connor.8304.sbeok.shnf",
+      "gd1980-05-15.126692.mtx.dusborne.flac16",
+      "gd1990-03-22.sbd.miller.107871.flac16"
     ]
   },
   {
@@ -285,9 +285,9 @@
     "originalArtist": "Grateful Dead",
     "debutYear": 1969,
     "shows": [
-      "gd1970-05-02.sbd.miller.73350.sbeok.flac16",
-      "gd1977-11-04.sbd.miller.73350.sbeok.flac16",
-      "gd1989-10-09.sbd.walker-scotton.miller.81308.sbeok.flac16"
+      "gd1970-05-02.138227.sbd.miller.flac1648",
+      "gd77-11-04.sbd.unknown.2595.sbeok.shnf",
+      "gd89-10-09.sbd.serafin.7721.sbeok.shnf"
     ]
   },
   {
@@ -298,8 +298,8 @@
     "debutYear": 1977,
     "shows": [
       "gd1977-05-08.111493.mtx.seamons.sbeok.flac16",
-      "gd1978-04-16.sbd.miller.97746.sbeok.flac16",
-      "gd1990-03-29.sbd.miller.92800.sbeok.flac16"
+      "gd1978-04-16.sbd.cantor.motb.81457.sbeok.flac16",
+      "gd90-03-29.aud-fob.set2.unknown.1317.sbeok.shnf"
     ]
   },
   {
@@ -309,9 +309,9 @@
     "originalArtist": "Grateful Dead",
     "debutYear": 1971,
     "shows": [
-      "gd1972-05-26.sbd.miller.93041.sbeok.flac16",
+      "gd72-05-26.sbd.hollister.12758.sbeok.shnf",
       "gd1977-05-08.111493.mtx.seamons.sbeok.flac16",
-      "gd1990-03-22.sbd.miller.92800.sbeok.flac16"
+      "gd1990-03-22.sbd.miller.107871.flac16"
     ]
   },
   {
@@ -321,9 +321,9 @@
     "originalArtist": "Grateful Dead",
     "debutYear": 1971,
     "shows": [
-      "gd1972-08-27.sbd.miller.72008.sbeok.flac16",
+      "gd72-08-27.sbd.orf.3328.sbeok.shnf",
       "gd1977-05-08.111493.mtx.seamons.sbeok.flac16",
-      "gd1990-03-29.sbd.miller.92800.sbeok.flac16"
+      "gd90-03-29.aud-fob.set2.unknown.1317.sbeok.shnf"
     ]
   },
   {
@@ -333,9 +333,9 @@
     "originalArtist": "Traditional",
     "debutYear": 1970,
     "shows": [
-      "gd1971-02-18.sbd.miller.97746.sbeok.flac16",
-      "gd1972-05-26.sbd.miller.93041.sbeok.flac16",
-      "gd1974-10-18.sbd.miller.110006.flac16"
+      "gd71-02-18.sbd.orf.107.sbeok.shnf",
+      "gd72-05-26.sbd.hollister.12758.sbeok.shnf",
+      "gd74-10-18.sbd.bertha-ashley.22796.sbeok.shnf"
     ]
   },
   {
@@ -345,9 +345,9 @@
     "originalArtist": "Grateful Dead",
     "debutYear": 1970,
     "shows": [
-      "gd1970-05-15.sbd.miller.73350.sbeok.flac16",
-      "gd1980-10-31.sbd.miller.73350.sbeok.flac16",
-      "gd1988-09-03.sbd.miller.73350.sbeok.flac16"
+      "gd70-05-15.early-late.sbd.97.sbeok.shnf",
+      "gd80-10-31.sbd-preFM.cousinit.20377.sbeok.shnf",
+      "gd88-09-03.sbd.miller.27749.sbeok.flacf"
     ]
   },
   {
@@ -357,9 +357,9 @@
     "originalArtist": "Grateful Dead",
     "debutYear": 1972,
     "shows": [
-      "gd1973-11-11.sbd.miller.79996.sbeok.flac16",
-      "gd1977-05-19.sbd.miller.73350.sbeok.flac16",
-      "gd1989-07-04.139967.sbd.miller.flac2448"
+      "gd73-11-11.sbd.schlissel.14105.sbeok.shnf",
+      "gd77-05-19.sbd.direwolf.3120.sbeok.shnf",
+      "gd89-07-04.aud.wiley.9045.sbeok.shnf"
     ]
   }
 ]
