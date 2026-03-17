@@ -30,10 +30,6 @@ final class AudioPlayerService {
         setupRemoteCommands()
     }
 
-    deinit {
-        cleanup()
-    }
-
     // MARK: - Audio Session
 
     private func setupAudioSession() {
