@@ -45,6 +45,9 @@ targets:
       path: DeadTapes/Info.plist
       properties:
         NSAppTransportSecurity:
-          NSAllowsArbitraryLoads: true
+          NSExceptionDomains:
+            archive.org:
+              NSIncludesSubdomains: true
+              NSExceptionAllowsInsecureHTTPLoads: true
         UIBackgroundModes:
           - audio
