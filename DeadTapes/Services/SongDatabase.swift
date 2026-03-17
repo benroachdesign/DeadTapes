@@ -32,7 +32,7 @@ class SongDatabase {
     
     // Sort functions for views
     func getSongsSortedAlphabetically() -> [Song] {
-        return allSongs.sorted { $0.title < $1.title }
+        return allSongs // already sorted alphabetically at load time
     }
     
     func getSongsSortedByPlayCount() -> [Song] {
