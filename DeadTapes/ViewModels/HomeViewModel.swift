@@ -44,7 +44,13 @@ final class HomeViewModel {
         let day = calendar.component(.day, from: Date())
 
         do {
-            let shows = try await ArchiveAPI.shared.showsOnThisDay(month: month, day: day)
+            // Run fetch and minimum display time concurrently so the loading
+            // screen always shows long enough to read one quote, but slow
+            // network connections don't add extra delay.
+            async let showsFetch = ArchiveAPI.shared.showsOnThisDay(month: month, day: day)
+            async let minimumDelay: Void = Task.sleep(for: .seconds(2.5))
+            let shows = try await showsFetch
+            _ = try? await minimumDelay
             await MainActor.run {
                 self.todayShows = shows
                 self.isLoading = false
