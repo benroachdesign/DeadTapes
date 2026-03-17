@@ -24,6 +24,7 @@ final class AudioPlayerService {
     private var timeObserver: Any?
     private var itemObservers: [NSKeyValueObservation] = []
     private var endObserver: NSObjectProtocol?
+    private var remoteCommandTokens: [Any] = []
 
     init() {
         setupAudioSession()
@@ -255,39 +256,36 @@ final class AudioPlayerService {
     private func setupRemoteCommands() {
         let center = MPRemoteCommandCenter.shared()
 
-        center.playCommand.addTarget { [weak self] _ in
-            self?.resume()
-            return .success
-        }
-
-        center.pauseCommand.addTarget { [weak self] _ in
-            self?.pause()
-            return .success
-        }
-
-        center.togglePlayPauseCommand.addTarget { [weak self] _ in
-            self?.togglePlayPause()
-            return .success
-        }
-
-        center.nextTrackCommand.addTarget { [weak self] _ in
-            self?.next()
-            return .success
-        }
-
-        center.previousTrackCommand.addTarget { [weak self] _ in
-            self?.previous()
-            return .success
-        }
-
-        center.changePlaybackPositionCommand.addTarget { [weak self] event in
-            guard let self = self,
-                  let posEvent = event as? MPChangePlaybackPositionCommandEvent else {
-                return .commandFailed
+        remoteCommandTokens = [
+            center.playCommand.addTarget { [weak self] _ in
+                self?.resume()
+                return .success
+            },
+            center.pauseCommand.addTarget { [weak self] _ in
+                self?.pause()
+                return .success
+            },
+            center.togglePlayPauseCommand.addTarget { [weak self] _ in
+                self?.togglePlayPause()
+                return .success
+            },
+            center.nextTrackCommand.addTarget { [weak self] _ in
+                self?.next()
+                return .success
+            },
+            center.previousTrackCommand.addTarget { [weak self] _ in
+                self?.previous()
+                return .success
+            },
+            center.changePlaybackPositionCommand.addTarget { [weak self] event in
+                guard let self = self,
+                      let posEvent = event as? MPChangePlaybackPositionCommandEvent else {
+                    return .commandFailed
+                }
+                self.seek(to: posEvent.positionTime)
+                return .success
             }
-            self.seek(to: posEvent.positionTime)
-            return .success
-        }
+        ]
     }
 
     // MARK: - Cleanup

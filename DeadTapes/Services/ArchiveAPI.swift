@@ -145,9 +145,11 @@ actor ArchiveAPI {
 
         let (data, response) = try await session.data(from: url)
 
-        guard let httpResponse = response as? HTTPURLResponse,
-              (200...299).contains(httpResponse.statusCode) else {
-            throw APIError.serverError
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.serverError(0)
+        }
+        guard (200...299).contains(httpResponse.statusCode) else {
+            throw APIError.serverError(httpResponse.statusCode)
         }
 
         // Evict oldest entries if cache is full
@@ -170,13 +172,15 @@ actor ArchiveAPI {
 
 enum APIError: LocalizedError {
     case invalidURL
-    case serverError
+    case serverError(Int)
     case decodingError
 
     var errorDescription: String? {
         switch self {
         case .invalidURL: return "Invalid URL"
-        case .serverError: return "Server error. Please try again."
+        case .serverError(429): return "Rate limited. Please wait a moment and try again."
+        case .serverError(503): return "Archive.org is temporarily unavailable."
+        case .serverError(let code): return "Server error (\(code)). Please try again."
         case .decodingError: return "Failed to parse response."
         }
     }
