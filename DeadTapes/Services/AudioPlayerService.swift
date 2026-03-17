@@ -203,7 +203,6 @@ final class AudioPlayerService {
             self.currentIndex += 1
             if self.currentIndex < self.queue.count {
                 self.updateCurrentTrack(self.queue[self.currentIndex])
-                self.observeCurrentItem()
                 self.enqueueUpcoming()
             } else {
                 // End of queue
