@@ -3,6 +3,7 @@ import SwiftUI
 struct SongDetailView: View {
     @State var viewModel: SongDetailViewModel
     @Environment(AudioPlayerService.self) private var audioPlayer
+    @State private var showNoShowsAlert = false
     
     var body: some View {
         ZStack {
@@ -34,7 +35,7 @@ struct SongDetailView: View {
                         Button(action: playRandomVersion) {
                             HStack {
                                 Image(systemName: "dice.fill")
-                                Text("Play Random Version")
+                                Text(viewModel.isLoading ? "Loading Shows…" : "Play Random Version")
                                     .fontWeight(.bold)
                             }
                             .frame(maxWidth: .infinity)
@@ -45,6 +46,13 @@ struct SongDetailView: View {
                             .foregroundStyle(.white)
                             .clipShape(Capsule())
                             .padding(.top, DeadTheme.Spacing.md)
+                        }
+                        .disabled(viewModel.isLoading)
+                        .opacity(viewModel.isLoading ? 0.6 : 1)
+                        .alert("No Performances Available", isPresented: $showNoShowsAlert) {
+                            Button("OK", role: .cancel) {}
+                        } message: {
+                            Text("No tracked performances found for \(viewModel.song.title).")
                         }
                     }
                     .padding(.horizontal, DeadTheme.Spacing.lg)
@@ -109,7 +117,10 @@ struct SongDetailView: View {
     }
     
     private func playRandomVersion() {
-        guard let randomShow = viewModel.randomShow() else { return }
+        guard let randomShow = viewModel.randomShow() else {
+            showNoShowsAlert = true
+            return
+        }
         
         Task {
             // Need to fetch full files to play
