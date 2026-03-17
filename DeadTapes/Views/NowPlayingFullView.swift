@@ -1,4 +1,5 @@
 import SwiftUI
+import AVKit
 
 struct NowPlayingFullView: View {
     @Environment(AudioPlayerService.self) private var audioPlayer
@@ -173,6 +174,11 @@ struct NowPlayingFullView: View {
             // Transport controls
             transportControls
 
+            // Audio output picker (AirPlay / Bluetooth)
+            RoutePickerView()
+                .frame(width: 44, height: 44)
+                .padding(.top, DeadTheme.Spacing.sm)
+
             Spacer()
         }
     }
@@ -293,4 +299,18 @@ struct NowPlayingFullView: View {
         let secs = Int(seconds) % 60
         return String(format: "%d:%02d", mins, secs)
     }
+}
+
+// MARK: - Route Picker (AirPlay / Bluetooth output)
+
+private struct RoutePickerView: UIViewRepresentable {
+    func makeUIView(context: Context) -> AVRoutePickerView {
+        let picker = AVRoutePickerView()
+        picker.tintColor = UIColor(DeadTheme.Colors.textSecondary)
+        picker.activeTintColor = UIColor(DeadTheme.Colors.accent)
+        picker.backgroundColor = .clear
+        return picker
+    }
+
+    func updateUIView(_ uiView: AVRoutePickerView, context: Context) {}
 }
