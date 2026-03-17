@@ -1,6 +1,7 @@
 import Foundation
 import Observation
 
+@MainActor
 @Observable
 final class HomeViewModel {
     var todayShows: [Show] = []
@@ -51,15 +52,11 @@ final class HomeViewModel {
             async let minimumDelay: Void = Task.sleep(for: .seconds(2.5))
             let shows = try await showsFetch
             _ = try? await minimumDelay
-            await MainActor.run {
-                self.todayShows = shows
-                self.isLoading = false
-            }
+            todayShows = shows
+            isLoading = false
         } catch {
-            await MainActor.run {
-                self.errorMessage = error.localizedDescription
-                self.isLoading = false
-            }
+            errorMessage = error.localizedDescription
+            isLoading = false
         }
     }
 
@@ -69,9 +66,7 @@ final class HomeViewModel {
         guard trendingShow == nil else { return }
         do {
             let shows = try await ArchiveAPI.shared.fetchTrending(rows: 1)
-            await MainActor.run {
-                self.trendingShow = shows.first
-            }
+            trendingShow = shows.first
         } catch {
             // Silently fail — this is a bonus feature
         }
@@ -90,16 +85,10 @@ final class HomeViewModel {
             // Filter for 4.0+ rating, then pick a random one
             let goodShows = shows.filter { ($0.avgRating ?? 0) >= 4.0 }
 
-            await MainActor.run {
-                if let pick = goodShows.randomElement() ?? shows.randomElement() {
-                    self.randomShow = pick
-                }
-                self.isLoadingRandom = false
-            }
+            randomShow = goodShows.randomElement() ?? shows.randomElement()
+            isLoadingRandom = false
         } catch {
-            await MainActor.run {
-                self.isLoadingRandom = false
-            }
+            isLoadingRandom = false
         }
     }
 }

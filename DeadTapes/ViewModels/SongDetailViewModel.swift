@@ -1,6 +1,7 @@
 import Foundation
 import Observation
 
+@MainActor
 @Observable
 class SongDetailViewModel {
     let song: Song
@@ -47,17 +48,13 @@ class SongDetailViewModel {
             // Sort shows by date descending
             fetchedShows.sort { $0.date > $1.date }
             
-            await MainActor.run { [fetchedShows] in
-                self.recentShows = fetchedShows
-                self.isLoading = false
-            }
+            recentShows = fetchedShows
+            isLoading = false
         } catch is CancellationError {
             isLoading = false
         } catch {
-            await MainActor.run {
-                self.errorMessage = error.localizedDescription
-                self.isLoading = false
-            }
+            errorMessage = error.localizedDescription
+            isLoading = false
         }
     }
     

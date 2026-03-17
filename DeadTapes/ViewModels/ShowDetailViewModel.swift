@@ -2,6 +2,7 @@ import Foundation
 import SwiftData
 import Observation
 
+@MainActor
 @Observable
 final class ShowDetailViewModel {
     var show: Show
@@ -22,18 +23,14 @@ final class ShowDetailViewModel {
 
         do {
             let tracks = try await ArchiveAPI.shared.fetchTracks(for: show.identifier)
-            await MainActor.run {
-                self.allTracks = tracks
-                self.groupTracksBySets(tracks)
-                self.isLoading = false
-            }
+            allTracks = tracks
+            groupTracksBySets(tracks)
+            isLoading = false
         } catch is CancellationError {
             isLoading = false
         } catch {
-            await MainActor.run {
-                self.errorMessage = error.localizedDescription
-                self.isLoading = false
-            }
+            errorMessage = error.localizedDescription
+            isLoading = false
         }
     }
 

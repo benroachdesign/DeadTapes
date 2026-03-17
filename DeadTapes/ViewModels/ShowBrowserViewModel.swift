@@ -1,6 +1,7 @@
 import Foundation
 import Observation
 
+@MainActor
 @Observable
 final class ShowBrowserViewModel {
     var shows: [Show] = []
@@ -41,18 +42,14 @@ final class ShowBrowserViewModel {
         do {
             let rows = isAllTime ? 100 : 50
             let results = try await ArchiveAPI.shared.searchShows(year: selectedYear, rows: rows)
-            await MainActor.run {
-                self.shows = results
-                self.filterShows()
-                self.isLoading = false
-            }
+            shows = results
+            filterShows()
+            isLoading = false
         } catch is CancellationError {
             isLoading = false
         } catch {
-            await MainActor.run {
-                self.errorMessage = error.localizedDescription
-                self.isLoading = false
-            }
+            errorMessage = error.localizedDescription
+            isLoading = false
         }
     }
 
