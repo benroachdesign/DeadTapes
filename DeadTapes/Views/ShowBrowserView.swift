@@ -17,7 +17,6 @@ struct ShowBrowserView: View {
                             .foregroundStyle(DeadTheme.Colors.accent)
                             .tracking(3)
                             .padding(.horizontal, DeadTheme.Spacing.xl)
-                            .padding(.horizontal, DeadTheme.Spacing.xl)
 
                         Text(viewModel.headerTitle)
                             .font(DeadTheme.Typography.largeTitle())

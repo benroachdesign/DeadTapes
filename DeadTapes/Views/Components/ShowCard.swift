@@ -3,6 +3,7 @@ import SwiftUI
 struct SourceBadge: View {
     let source: String
 
+    /// Uses Show.sourceLabel logic: accepts raw source string, derives label
     private var label: String {
         let s = source.lowercased()
         if s.contains("soundboard") || s.contains("sbd") { return "SBD" }
@@ -16,6 +17,16 @@ struct SourceBadge: View {
         case "MTX": return DeadTheme.Colors.matrix
         default: return DeadTheme.Colors.aud
         }
+    }
+
+    /// Convenience init that takes a pre-computed label directly
+    init(label: String) {
+        self.source = label // store the label as-is
+    }
+
+    /// Init that takes raw source string and derives a label
+    init(source: String) {
+        self.source = source
     }
 
     var body: some View {

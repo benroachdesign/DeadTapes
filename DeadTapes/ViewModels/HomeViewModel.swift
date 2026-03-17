@@ -10,10 +10,14 @@ final class HomeViewModel {
     var isLoadingRandom = false
     var errorMessage: String?
 
+    private static let todayDateFormatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateFormat = "MMMM d"
+        return f
+    }()
+
     var todayDateString: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM d"
-        return formatter.string(from: Date())
+        Self.todayDateFormatter.string(from: Date())
     }
 
     var hasShows: Bool {

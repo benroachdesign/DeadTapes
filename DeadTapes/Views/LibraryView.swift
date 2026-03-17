@@ -38,8 +38,9 @@ struct LibraryView: View {
 
                             LazyVStack(spacing: DeadTheme.Spacing.sm) {
                                 ForEach(Array(favorites.enumerated()), id: \.element.identifier) { index, favorite in
-                                    NavigationLink(destination: ShowDetailView(show: favorite.toShow())) {
-                                        ShowCard(show: favorite.toShow())
+                                    let show = favorite.toShow()
+                                    NavigationLink(destination: ShowDetailView(show: show)) {
+                                        ShowCard(show: show)
                                     }
                                     .buttonStyle(.plain)
                                     .opacity(itemsVisible ? 1 : 0)

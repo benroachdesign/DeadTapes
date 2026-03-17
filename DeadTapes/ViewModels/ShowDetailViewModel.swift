@@ -40,15 +40,8 @@ final class ShowDetailViewModel {
         let sorted = grouped.keys.sorted()
 
         trackSets = sorted.map { disc in
-            let setName: String
-            switch disc {
-            case 1: setName = "Set 1"
-            case 2: setName = "Set 2"
-            case 3: setName = "Encore"
-            case 4: setName = "Encore 2"
-            default: setName = "Set \(disc)"
-            }
             let setTracks = (grouped[disc] ?? []).sorted { $0.trackNumber < $1.trackNumber }
+            let setName = setTracks.first?.setName ?? "Set \(disc)"
             return TrackSet(name: setName, tracks: setTracks)
         }
     }
