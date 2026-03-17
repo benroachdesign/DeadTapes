@@ -55,7 +55,7 @@ final class AudioPlayerService {
         self.isLoading = true
 
         // Create player items for current and upcoming tracks (gapless)
-        let items = tracks[index...].prefix(10).map { AVPlayerItem(url: $0.streamURL) }
+        let items = tracks[index...].prefix(10).compactMap { $0.streamURL.map { AVPlayerItem(url: $0) } }
 
         player = AVQueuePlayer(items: Array(items))
         player?.actionAtItemEnd = .advance
@@ -141,7 +141,8 @@ final class AudioPlayerService {
         if nextIndex < queue.count && itemsInQueue < desiredAhead {
             let endIndex = min(nextIndex + (desiredAhead - itemsInQueue), queue.count)
             for i in nextIndex..<endIndex {
-                let item = AVPlayerItem(url: queue[i].streamURL)
+                guard let url = queue[i].streamURL else { continue }
+                let item = AVPlayerItem(url: url)
                 if player.canInsert(item, after: nil) {
                     player.insert(item, after: nil)
                 }

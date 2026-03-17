@@ -20,9 +20,12 @@ struct Track: Identifiable, Codable, Hashable {
         }
     }
 
-    var streamURL: URL {
-        let encoded = fileName.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? fileName
-        return URL(string: "https://archive.org/download/\(showIdentifier)/\(encoded)")!
+    var streamURL: URL? {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "archive.org"
+        components.path = "/download/\(showIdentifier)/\(fileName)"
+        return components.url
     }
 
     var formattedDuration: String {
