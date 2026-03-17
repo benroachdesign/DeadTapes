@@ -40,6 +40,7 @@
 		E49A9BB078629C9BC9C0F772 /* ShowCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C95C58E01AA2010CEDBDBD0 /* ShowCard.swift */; };
 		EE6F90D66D2492D6970338AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33DF511236DFE4E6B1EF4ABF /* Assets.xcassets */; };
 		F23DA38C7D9003A8AC6E7C68 /* TrendingShowCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E87EE1B9480A90F00EB21FF /* TrendingShowCard.swift */; };
+		F39C39644BA243D861175091 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 2AEE9592C9BC2AD73932721B /* PrivacyInfo.xcprivacy */; };
 		F74F56AE3549BD75D0990318 /* SongBrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ECBB95FE247A0D1E1FF566 /* SongBrowserViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		1C95C58E01AA2010CEDBDBD0 /* ShowCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCard.swift; sourceTree = "<group>"; };
 		22D891A3F4A91B5E1F918864 /* AnimatedGradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedGradientBackground.swift; sourceTree = "<group>"; };
 		22EBF767E60AC00A5B74EB99 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		2AEE9592C9BC2AD73932721B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		31EF11019306445DFBE3BABC /* NowPlayingFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingFullView.swift; sourceTree = "<group>"; };
 		33DF511236DFE4E6B1EF4ABF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35624DC966B7752D44A4839C /* songs_db.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = songs_db.json; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				33DF511236DFE4E6B1EF4ABF /* Assets.xcassets */,
 				ECAB8E5F74B94A4FDACB6009 /* DeadTapesApp.swift */,
 				05EB02409F72E2B3486EBD6F /* Info.plist */,
+				2AEE9592C9BC2AD73932721B /* PrivacyInfo.xcprivacy */,
 				338B809C124CC34A0EB77668 /* Models */,
 				7C58A0CDDD4B1EB8F3A3D44B /* Resources */,
 				7B88F67D183F7B0AF9CA2EB9 /* Services */,
@@ -228,7 +231,7 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					CF6DE217D13998772A7F7DAB = {
-						DevelopmentTeam = "";
+						DevelopmentTeam = K4D3PVWKVM;
 					};
 				};
 			};
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE6F90D66D2492D6970338AE /* Assets.xcassets in Resources */,
+				F39C39644BA243D861175091 /* PrivacyInfo.xcprivacy in Resources */,
 				D0749E5BC3F95C9BEF6566E4 /* songs_db.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,8 +316,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = K4D3PVWKVM;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = DeadTapes/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveVault;
@@ -344,8 +348,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = K4D3PVWKVM;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = DeadTapes/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = LiveVault;
