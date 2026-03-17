@@ -24,12 +24,14 @@ class SongBrowserViewModel {
         }
     }
     
-    init() {
-        loadData()
-    }
-    
-    private func loadData() {
-        allSongs = SongDatabase.shared.allSongs
+    func load() async {
+        guard allSongs.isEmpty else { return }
+        // SongDatabase.loadDatabase() calls Data(contentsOf:) synchronously.
+        // Run it in a detached task so it never blocks the main thread.
+        let songs = await Task.detached(priority: .userInitiated) {
+            SongDatabase.shared.allSongs
+        }.value
+        allSongs = songs
         filterAndSortSongs()
     }
     

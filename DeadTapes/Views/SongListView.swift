@@ -99,6 +99,7 @@ struct SongListView: View {
             }
         }
         .tint(DeadTheme.Colors.accent)
+        .task { await viewModel.load() }
     }
 }
 
