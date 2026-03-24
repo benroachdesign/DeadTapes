@@ -27,7 +27,9 @@ final class ShowRankingService {
             isLoaded = true
         } catch {
             // Silently fail — badges are enhancement, not critical
+            #if DEBUG
             print("Failed to load top all-time: \(error)")
+            #endif
         }
     }
 
